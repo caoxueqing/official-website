@@ -1,0 +1,102 @@
+<extend name="Public/base" />
+<block name="head"> <include file="Public/head" /> </block>
+<block name="title">我要咨询</block>
+<block name="header"> <include file="Public/header" /> </block>
+<block name="left"> <include file="Public/leftSidebar" /> </block>
+<block name="right">
+<div class="row">
+<style>
+    .collapsing{
+		-webkit-transition: none;
+		transition: none;
+	}
+</style>
+	<div class="col-xs-12">
+		<div class="box" style="padding:15px 15px;">
+			<div style="padding-left: 10px; padding-right: 10px;width: 100%;min-height: 1px;">
+				<ul class="nav nav-tabs nav-dark" id="myTab" style="background:#ddd">
+					<li class="active"><a href="#alreadyReply">已回复</a></li>
+					<li><a href="#noReply">未回复</a></li>
+				</ul>
+				<div class="tab-content mb30">
+					<div class="tab-pane active" id="alreadyReply">
+					<form method="post" id="get-answer-form">
+						<div id="alreadyReplydiv" class="panel-group">
+							<!-- 循环开始 -->
+							<volist name="alreadyReplyArray" id="v">
+								<div class="panel panel-default" style="margin-top: 0px;">
+									<div class="panel-heading">
+										<h4 class="panel-title">
+											<a class="collapsed" data-toggle="collapse" data-parent="#alreadyReplydiv" href="#alreadyReplydiv{$v.ask_id}" onclick="getAnswerData({$v.doctor_id},{$v.ask_id})">
+												{$v.content}
+												<br/>
+												{$v.create_time}
+											</a>
+										</h4>
+									</div>
+									<div class="panel-collapse collapse" id="alreadyReplydiv{$v.ask_id}" style="height: 0px;">
+										<div class="panel-body hid">
+											
+										</div>
+									</div>
+								</div>
+							</volist>
+							<!-- 循环结束 -->
+						</div>
+					</div>
+					</form>
+					<!-- 已回复 end -->
+					<div class="tab-pane" id="noReply">
+						<div id="noReplydiv" class="panel-group">
+							<!-- 循环开始 -->
+							<volist name="noReplyArray" id="vo">
+								<div class="panel panel-default" style="margin-top: 0px;border-radius:0px">
+									<div class="panel-heading" style="padding: 0px 0px;border-radius:0px">
+										<h4 class="panel-title">
+											<a class="collapsed" style="display:block;padding: 10px 15px;" data-toggle="collapse" data-parent="#noReplydiv" href="#noReplydiv{$v.ask_id}">
+												{$vo.content}
+												<br/>
+												<img src="{$vo.url}" style="width: 80px">
+												<br/>
+												{$vo.create_time}
+											</a>
+										</h4>
+									</div>
+									<!-- <div class="panel-collapse collapse" id="noReplydiv{$v.ask_id}" style="height: 0px;">
+										<div class="panel-body">
+											<img src="{$vo.url}" style="width: 80px">
+										</div>
+									</div> -->
+								</div>
+							</volist>
+							<!-- 循环结束 -->
+						</div>
+					</div>
+					<!-- 未回复 end -->
+				</div>
+				<script>
+					$(function() {
+						$('#myTab a:last').tab('show');
+					})
+					$('#myTab a').click(function(e) {
+						e.preventDefault();
+						$(this).tab('show');
+					})
+				</script>
+				<div class="pages">
+	           		{$page}
+	            </div>
+				<!-- /.box-header -->
+			</div>
+		</div>
+		<!-- /.box -->
+	</div>
+	<!-- /.col -->
+</div>
+<!-- /.row --> </block>
+<block name="runJsContent"> $('#mainTable').DataTable({
+"paging": true, "lengthChange": true, "searching": true, "ordering":
+false, "info": true, "autoWidth": false }); </block>
+
+<block name="footer"> <include file="Public/footer" /> </block>
+<block name="foot"> <include file="Public/foot" /> </block>

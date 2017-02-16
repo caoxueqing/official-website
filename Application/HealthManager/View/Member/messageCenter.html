@@ -1,0 +1,155 @@
+<extend name="Public/base" />
+<block name="head"> <include file="Public/head" /> </block>
+<block name="title">信息中心</block>
+<block name="header"> <include file="Public/header" /> </block>
+<block name="left"> <include file="Public/leftSidebar" /> </block>
+<block name="right">
+<div class="row">
+<style>
+    .collapsing{
+		-webkit-transition: none;
+		transition: none;
+	}
+</style>
+	<div class="col-xs-12">
+		<div class="box" style="padding:15px 15px;">
+			<div style="padding-left: 10px; padding-right: 10px;width: 100%;min-height: 1px;">
+				<ul class="nav nav-tabs nav-dark" id="myTab" style="background:#ddd">
+					<li class="active"><a href="#system">系统消息</a></li>
+					<li><a href="#health">健康消息</a></li>
+					<li><a href="#notice">通知消息</a></li>
+				</ul>
+				<div class="tab-content mb30">
+					<div class="tab-pane active" id="system">
+						<div id="systemdiv" class="panel-group">
+							<!-- 循环开始 -->
+							<volist name="systemMessageArray" id="v">
+								<div class="panel panel-default" style="margin-top: 0px;border-radius:0px">
+									<div class="panel-heading" style="padding: 0px 0px;border-radius:0px">
+										<h4 class="panel-title">
+											<a class="collapsed" style="display:block;line-height: 37px;text-indent: 10px;" data-toggle="collapse" data-parent="#systemdiv" href="#systemdiv{$v.message_id}" onclick="ChangeState({$v.message_id},'system',{$v.status});">
+												<lable style="width:100px;margin-right: 100px;">{$v.title}</lable>{$v.add_time}
+												<if condition="$v.status eq 0">
+													<i id="system{$v.message_id}" status='{$v.status}' class="status" style="margin-left: 30px;">未读</i>
+												<else/>
+													<i id="system{$v.message_id}" status='{$v.status}' class="status" style="margin-left: 30px;">已读</i>
+												</if>
+											</a>
+										</h4>
+									</div>
+									<div class="panel-collapse collapse" id="systemdiv{$v.message_id}" style="height: 0px;">
+										<div class="panel-body">
+											{$v.content}
+										</div>
+									</div>
+								</div>
+							</volist>
+							<!-- 循环结束 -->
+							<script>						
+							//打开关闭按钮
+								function ChangeState(mid,name,status){
+									//获取状态
+									var status= status;
+									//获取消息id
+									var mid = mid;
+									//点击当前消息时修改数据库状态为已读
+									$.ajax({
+										cache: false,
+										type: "POST",
+										url: 'ajax_changeStatus',
+										data : {
+											"mid" : mid,
+											"status" : status,
+										}, 
+										async: false,
+										error: function(request) {},
+										success: function(data) {
+											if(data) {
+												$('.collapsed').find("i").html('已读');
+											} 
+										}
+									});
+									
+								}
+							
+							
+							</script>
+						</div>
+					</div>
+					<div class="tab-pane" id="health">
+						<div id="healthdiv" class="panel-group">
+							<!-- 循环开始 -->
+							<volist name="healthMessageArray" id="v">
+								<div class="panel panel-default" style="margin-top: 0px;">
+									<div class="panel-heading">
+										<h4 class="panel-title">
+											<a class="collapsed" data-toggle="collapse" data-parent="#healthdiv" href="#healthdiv{$v.message_id}" onclick="ChangeState({$v.message_id},'health',{$v.status});">
+												<lable style="width:100px;margin-right: 100px;">{$v.title}</lable>{$v.add_time}
+												<if condition="$v.status eq 0">
+													<i id="health{$v.message_id}" style="margin-left: 30px;">未读</i>
+												<else/>
+													<i id="health{$v.message_id}" style="margin-left: 30px;">已读</i>
+												</if>
+											</a>
+										</h4>
+									</div>
+									<div class="panel-collapse collapse" id="healthdiv{$v.message_id}" style="height: 0px;">
+										<div class="panel-body">{$v.content}</div>
+									</div>
+								</div>
+							</volist>
+							<!-- 循环结束 -->
+						</div>
+					</div>
+					<div class="tab-pane" id="notice">
+						<div id="noticediv" class="panel-group">
+							<!-- 循环开始 -->
+							<volist name="askMessageArray" id="v">
+								<div class="panel panel-default" style="margin-top: 0px;">
+									<div class="panel-heading">
+										<h4 class="panel-title">
+											<a class="collapsed" data-toggle="collapse" data-parent="#noticediv" href="#noticediv{$v.message_id}" onclick="ChangeState({$v.message_id},'notice',{$v.status});"> 
+											<lable style="width:100px;margin-right: 100px;">{$v.title}</lable>{$v.add_time}
+												<if condition="$v.status eq 0"> 
+													<i id="notice{$v.message_id}" style="margin-left: 30px;">未读</i> 
+												<else /> 
+													<i id="notice{$v.message_id}" style="margin-left: 30px;">已读</i> 
+												</if>
+											</a>
+										</h4>
+									</div>
+									<div class="panel-collapse collapse" id="noticediv{$v.message_id}" style="height: 0px;">
+										<div class="panel-body">{$v.content}</div>
+									</div>
+								</div>
+							</volist>
+							<!-- 循环结束 -->
+						</div>
+					</div>
+				</div>
+				<script>
+					$(function() {
+						$('#myTab a:last').tab('show');
+					})
+					$('#myTab a').click(function(e) {
+						e.preventDefault();
+						$(this).tab('show');
+					})
+				</script>
+				<div class="pages">
+	           		{$page}
+	            </div>
+				<!-- /.box-header -->
+			</div>
+		</div>
+		<!-- /.box -->
+	</div>
+	<!-- /.col -->
+</div>
+<!-- /.row --> </block>
+<block name="runJsContent"> $('#mainTable').DataTable({
+"paging": true, "lengthChange": true, "searching": true, "ordering":
+false, "info": true, "autoWidth": false }); </block>
+
+<block name="footer"> <include file="Public/footer" /> </block>
+<block name="foot"> <include file="Public/foot" /> </block>

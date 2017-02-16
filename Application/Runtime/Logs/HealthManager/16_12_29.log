@@ -1,0 +1,274 @@
+[ 2016-12-29T10:05:02+08:00 ] ::1 /HealthManager/Member/signOut.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000049s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000925s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000904s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001006s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Applications/MAMP/htdocs/HealthManager/ThinkPHP/Library/Think/Session/Driver/Db.class.php 第 95 行.
+NOTIC: [2] mysql_connect(): php_network_getaddresses: getaddrinfo failed: nodename nor servname provided, or not known /Applications/MAMP/htdocs/HealthManager/ThinkPHP/Library/Think/Session/Driver/Db.class.php 第 95 行.
+NOTIC: [2] mysql_connect(): php_network_getaddresses: getaddrinfo failed: nodename nor servname provided, or not known /Applications/MAMP/htdocs/HealthManager/ThinkPHP/Library/Think/Session/Driver/Db.class.php 第 95 行.
+NOTIC: [2] mysql_select_db() expects parameter 2 to be resource, boolean given /Applications/MAMP/htdocs/HealthManager/ThinkPHP/Library/Think/Session/Driver/Db.class.php 第 98 行.
+NOTIC: [8] Undefined offset: 1 /Applications/MAMP/htdocs/HealthManager/ThinkPHP/Library/Think/Session/Driver/Db.class.php 第 124 行.
+NOTIC: [2] mysql_query() expects parameter 2 to be resource, null given /Applications/MAMP/htdocs/HealthManager/ThinkPHP/Library/Think/Session/Driver/Db.class.php 第 125 行.
+NOTIC: [8] Undefined offset: 0 /Applications/MAMP/htdocs/HealthManager/ThinkPHP/Library/Think/Session/Driver/Db.class.php 第 155 行.
+NOTIC: [2] mysql_query() expects parameter 2 to be resource, null given /Applications/MAMP/htdocs/HealthManager/ThinkPHP/Library/Think/Session/Driver/Db.class.php 第 156 行.
+NOTIC: [2] mysql_affected_rows() expects parameter 1 to be resource, null given /Applications/MAMP/htdocs/HealthManager/ThinkPHP/Library/Think/Session/Driver/Db.class.php 第 157 行.
+NOTIC: [8] Undefined offset: 0 /Applications/MAMP/htdocs/HealthManager/ThinkPHP/Library/Think/Session/Driver/Db.class.php 第 168 行.
+NOTIC: [2] mysql_query() expects parameter 2 to be resource, null given /Applications/MAMP/htdocs/HealthManager/ThinkPHP/Library/Think/Session/Driver/Db.class.php 第 169 行.
+NOTIC: [2] mysql_affected_rows() expects parameter 1 to be resource, null given /Applications/MAMP/htdocs/HealthManager/ThinkPHP/Library/Think/Session/Driver/Db.class.php 第 170 行.
+NOTIC: [8] Undefined offset: 0 /Applications/MAMP/htdocs/HealthManager/ThinkPHP/Library/Think/Session/Driver/Db.class.php 第 112 行.
+NOTIC: [2] mysql_close() expects parameter 1 to be resource, null given /Applications/MAMP/htdocs/HealthManager/ThinkPHP/Library/Think/Session/Driver/Db.class.php 第 112 行.
+
+[ 2016-12-29T10:05:02+08:00 ] ::1 /HealthManager/Member/signIn.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000040s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000927s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001666s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002135s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Applications/MAMP/htdocs/HealthManager/ThinkPHP/Library/Think/Session/Driver/Db.class.php 第 95 行.
+NOTIC: [2] mysql_connect(): php_network_getaddresses: getaddrinfo failed: nodename nor servname provided, or not known /Applications/MAMP/htdocs/HealthManager/ThinkPHP/Library/Think/Session/Driver/Db.class.php 第 95 行.
+NOTIC: [2] mysql_connect(): php_network_getaddresses: getaddrinfo failed: nodename nor servname provided, or not known /Applications/MAMP/htdocs/HealthManager/ThinkPHP/Library/Think/Session/Driver/Db.class.php 第 95 行.
+NOTIC: [2] mysql_select_db() expects parameter 2 to be resource, boolean given /Applications/MAMP/htdocs/HealthManager/ThinkPHP/Library/Think/Session/Driver/Db.class.php 第 98 行.
+NOTIC: [8] Undefined offset: 1 /Applications/MAMP/htdocs/HealthManager/ThinkPHP/Library/Think/Session/Driver/Db.class.php 第 124 行.
+NOTIC: [2] mysql_query() expects parameter 2 to be resource, null given /Applications/MAMP/htdocs/HealthManager/ThinkPHP/Library/Think/Session/Driver/Db.class.php 第 125 行.
+INFO: [ view_begin ] --START--
+INFO: Run HealthManager\Behavior\CheckAccessBehavior [ RunTime:0.000787s ]
+INFO: [ view_begin ] --END-- [ RunTime:0.000899s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000172s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000470s ]
+NOTIC: [8] Use of undefined constant signIn - assumed 'signIn' /Applications/MAMP/htdocs/HealthManager/Application/Runtime/Cache/HealthManager/23c8f7904e7df14c8a5356875c906312.php 第 37 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.014647s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.014726s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000762s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000859s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000936s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001017s ]
+
+[ 2016-12-29T10:05:12+08:00 ] ::1 /HealthManager/Member/ajax_signIn
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000612s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000720s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000807s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Applications/MAMP/htdocs/HealthManager/ThinkPHP/Library/Think/Session/Driver/Db.class.php 第 95 行.
+NOTIC: [2] mysql_connect(): php_network_getaddresses: getaddrinfo failed: nodename nor servname provided, or not known /Applications/MAMP/htdocs/HealthManager/ThinkPHP/Library/Think/Session/Driver/Db.class.php 第 95 行.
+NOTIC: [2] mysql_connect(): php_network_getaddresses: getaddrinfo failed: nodename nor servname provided, or not known /Applications/MAMP/htdocs/HealthManager/ThinkPHP/Library/Think/Session/Driver/Db.class.php 第 95 行.
+NOTIC: [2] mysql_select_db() expects parameter 2 to be resource, boolean given /Applications/MAMP/htdocs/HealthManager/ThinkPHP/Library/Think/Session/Driver/Db.class.php 第 98 行.
+NOTIC: [8] Undefined offset: 1 /Applications/MAMP/htdocs/HealthManager/ThinkPHP/Library/Think/Session/Driver/Db.class.php 第 124 行.
+NOTIC: [2] mysql_query() expects parameter 2 to be resource, null given /Applications/MAMP/htdocs/HealthManager/ThinkPHP/Library/Think/Session/Driver/Db.class.php 第 125 行.
+NOTIC: [8] curl_setopt(): CURLOPT_SSL_VERIFYHOST no longer accepts the value 1, value 2 will be used instead /Applications/MAMP/htdocs/HealthManager/Application/Common/Common/function.php 第 66 行.
+
+[ 2016-12-29T10:05:17+08:00 ] ::1 /HealthManager/Member/ajax_signIn
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000569s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000545s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000612s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Applications/MAMP/htdocs/HealthManager/ThinkPHP/Library/Think/Session/Driver/Db.class.php 第 95 行.
+NOTIC: [2] mysql_connect(): php_network_getaddresses: getaddrinfo failed: nodename nor servname provided, or not known /Applications/MAMP/htdocs/HealthManager/ThinkPHP/Library/Think/Session/Driver/Db.class.php 第 95 行.
+NOTIC: [2] mysql_connect(): php_network_getaddresses: getaddrinfo failed: nodename nor servname provided, or not known /Applications/MAMP/htdocs/HealthManager/ThinkPHP/Library/Think/Session/Driver/Db.class.php 第 95 行.
+NOTIC: [2] mysql_select_db() expects parameter 2 to be resource, boolean given /Applications/MAMP/htdocs/HealthManager/ThinkPHP/Library/Think/Session/Driver/Db.class.php 第 98 行.
+NOTIC: [8] Undefined offset: 1 /Applications/MAMP/htdocs/HealthManager/ThinkPHP/Library/Think/Session/Driver/Db.class.php 第 124 行.
+NOTIC: [2] mysql_query() expects parameter 2 to be resource, null given /Applications/MAMP/htdocs/HealthManager/ThinkPHP/Library/Think/Session/Driver/Db.class.php 第 125 行.
+NOTIC: [8] curl_setopt(): CURLOPT_SSL_VERIFYHOST no longer accepts the value 1, value 2 will be used instead /Applications/MAMP/htdocs/HealthManager/Application/Common/Common/function.php 第 66 行.
+
+[ 2016-12-29T10:05:36+08:00 ] ::1 /HealthManager/Member/ajax_signIn
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000052s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001593s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001727s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001862s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Applications/MAMP/htdocs/HealthManager/ThinkPHP/Library/Think/Session/Driver/Db.class.php 第 95 行.
+NOTIC: [8] curl_setopt(): CURLOPT_SSL_VERIFYHOST no longer accepts the value 1, value 2 will be used instead /Applications/MAMP/htdocs/HealthManager/Application/Common/Common/function.php 第 66 行.
+
+[ 2016-12-29T10:05:37+08:00 ] ::1 /HealthManager/Member/dashboard
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000370s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000472s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000542s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Applications/MAMP/htdocs/HealthManager/ThinkPHP/Library/Think/Session/Driver/Db.class.php 第 95 行.
+SQL: SHOW COLUMNS FROM `hm_menu` [ RunTime:0.0181s ]
+SQL: SELECT * FROM `hm_menu` WHERE ( role=1 )  [ RunTime:0.0250s ]
+SQL: SHOW COLUMNS FROM `hm_result_report` [ RunTime:0.0187s ]
+SQL: SELECT * FROM `hm_result_report` WHERE ( uid=11 ) GROUP BY report_type ORDER BY add_time DESC  [ RunTime:0.0283s ]
+SQL: SHOW COLUMNS FROM `hm_data_tempe_rature` [ RunTime:0.0222s ]
+SQL: SELECT * FROM `hm_data_tempe_rature` WHERE ( tempe_rature_id=1 ) LIMIT 1   [ RunTime:0.0252s ]
+SQL: SHOW COLUMNS FROM `hm_data_sst` [ RunTime:0.0211s ]
+SQL: SELECT * FROM `hm_data_sst` WHERE ( id=1391 ) LIMIT 1   [ RunTime:0.0249s ]
+SQL: SHOW COLUMNS FROM `hm_data_dynamic_bp` [ RunTime:0.0232s ]
+SQL: SELECT * FROM `hm_data_dynamic_bp` WHERE ( detect_id=336 ) LIMIT 1   [ RunTime:0.0414s ]
+SQL: SHOW COLUMNS FROM `hm_data_blood_oxygen` [ RunTime:0.0168s ]
+SQL: SELECT * FROM `hm_data_blood_oxygen` WHERE ( blood_oxygen_id=1 ) LIMIT 1   [ RunTime:0.0221s ]
+SQL: SHOW COLUMNS FROM `hm_data_blood_sugar` [ RunTime:0.0161s ]
+SQL: SELECT * FROM `hm_data_blood_sugar` WHERE ( blood_sugar_id=6 ) LIMIT 1   [ RunTime:0.0166s ]
+INFO: [ view_begin ] --START--
+SQL: SHOW COLUMNS FROM `hm_user_info_base` [ RunTime:0.0210s ]
+SQL: SELECT `uid`,`username`,`email`,`mobile`,`email_verify`,`reg_time`,`user_type` FROM `hm_user_info_base` WHERE ( uid=11 ) LIMIT 1   [ RunTime:0.0291s ]
+SQL: SHOW COLUMNS FROM `hm_user_info_details` [ RunTime:0.0173s ]
+SQL: SELECT * FROM `hm_user_info_details` WHERE ( 1=1 AND uid='11' ) LIMIT 1   [ RunTime:0.0216s ]
+SQL: SHOW COLUMNS FROM `hm_user_info_extra` [ RunTime:0.0159s ]
+SQL: SELECT * FROM `hm_user_info_extra` WHERE ( 1=1 AND uid='11' ) LIMIT 1   [ RunTime:0.0214s ]
+SQL: SHOW COLUMNS FROM `hm_user_info_certification` [ RunTime:0.0170s ]
+SQL: SELECT * FROM `hm_user_info_certification` WHERE ( 1=1 AND uid='11' ) LIMIT 1   [ RunTime:0.0172s ]
+SQL: SHOW COLUMNS FROM `hm_user_bind` [ RunTime:0.0165s ]
+SQL: SELECT * FROM `hm_user_bind` WHERE ( 1=1 AND uid='11' )  [ RunTime:0.0153s ]
+SQL: SHOW COLUMNS FROM `hm_auth_group_access` [ RunTime:0.0170s ]
+SQL: SELECT `uid`,`group_id`,`title`,`rules` FROM hm_auth_group_access a INNER JOIN hm_auth_group g on a.group_id=g.id  WHERE ( a.uid='11' and g.status='1' )  [ RunTime:0.0196s ]
+SQL: SHOW COLUMNS FROM `hm_auth_rule` [ RunTime:0.0192s ]
+SQL: SELECT `condition`,`name` FROM `hm_auth_rule` WHERE `id` IN ('1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22') AND `type` = 1 AND `status` = 1  [ RunTime:0.0240s ]
+INFO: Run HealthManager\Behavior\CheckAccessBehavior [ RunTime:0.282161s ]
+INFO: [ view_begin ] --END-- [ RunTime:0.282238s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000140s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000215s ]
+NOTIC: [8] Undefined variable: noReadMessageCount /Applications/MAMP/htdocs/HealthManager/Application/Runtime/Cache/HealthManager/66e2f712b0113a25d6a1722f3691af31.php 第 183 行.
+NOTIC: [8] Undefined variable: discription /Applications/MAMP/htdocs/HealthManager/Application/Runtime/Cache/HealthManager/66e2f712b0113a25d6a1722f3691af31.php 第 330 行.
+NOTIC: [8] Undefined variable: message /Applications/MAMP/htdocs/HealthManager/Application/Runtime/Cache/HealthManager/66e2f712b0113a25d6a1722f3691af31.php 第 362 行.
+NOTIC: [8] Undefined index: data /Applications/MAMP/htdocs/HealthManager/Application/Runtime/Cache/HealthManager/66e2f712b0113a25d6a1722f3691af31.php 第 364 行.
+NOTIC: [8] Undefined variable: message /Applications/MAMP/htdocs/HealthManager/Application/Runtime/Cache/HealthManager/66e2f712b0113a25d6a1722f3691af31.php 第 362 行.
+NOTIC: [8] Undefined variable: message /Applications/MAMP/htdocs/HealthManager/Application/Runtime/Cache/HealthManager/66e2f712b0113a25d6a1722f3691af31.php 第 362 行.
+NOTIC: [8] Undefined index: data /Applications/MAMP/htdocs/HealthManager/Application/Runtime/Cache/HealthManager/66e2f712b0113a25d6a1722f3691af31.php 第 364 行.
+NOTIC: [8] Undefined variable: message /Applications/MAMP/htdocs/HealthManager/Application/Runtime/Cache/HealthManager/66e2f712b0113a25d6a1722f3691af31.php 第 362 行.
+NOTIC: [8] Undefined index: data /Applications/MAMP/htdocs/HealthManager/Application/Runtime/Cache/HealthManager/66e2f712b0113a25d6a1722f3691af31.php 第 364 行.
+NOTIC: [8] Undefined variable: message /Applications/MAMP/htdocs/HealthManager/Application/Runtime/Cache/HealthManager/66e2f712b0113a25d6a1722f3691af31.php 第 362 行.
+NOTIC: [8] Undefined index: data /Applications/MAMP/htdocs/HealthManager/Application/Runtime/Cache/HealthManager/66e2f712b0113a25d6a1722f3691af31.php 第 364 行.
+NOTIC: [8] Undefined variable: message /Applications/MAMP/htdocs/HealthManager/Application/Runtime/Cache/HealthManager/66e2f712b0113a25d6a1722f3691af31.php 第 362 行.
+NOTIC: [8] Undefined variable: message /Applications/MAMP/htdocs/HealthManager/Application/Runtime/Cache/HealthManager/66e2f712b0113a25d6a1722f3691af31.php 第 362 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.038622s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.038682s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000518s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000586s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000658s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000727s ]
+
+[ 2016-12-29T14:30:51+08:00 ] ::1 /index.php/HealthManager/Member/sstReportList
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000066s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001274s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000801s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000885s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Applications/MAMP/htdocs/HealthManager/ThinkPHP/Library/Think/Session/Driver/Db.class.php 第 95 行.
+SQL: SHOW COLUMNS FROM `hm_menu` [ RunTime:0.0055s ]
+SQL: SELECT * FROM `hm_menu` WHERE ( role=1 )  [ RunTime:0.0043s ]
+SQL: SHOW COLUMNS FROM `hm_result_report` [ RunTime:0.0048s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `hm_result_report` LIMIT 1   [ RunTime:0.0033s ]
+NOTIC: [8] Undefined variable: list /Applications/MAMP/htdocs/HealthManager/Application/HealthManager/Controller/MemberController.class.php 第 232 行.
+SQL: SELECT * FROM `hm_result_report` WHERE `uid` = null AND `report_type` = 3 ORDER BY add_time DESC LIMIT 0,5   [ RunTime:0.0040s ]
+NOTIC: [8] Undefined variable: reportArray /Applications/MAMP/htdocs/HealthManager/Application/HealthManager/Controller/MemberController.class.php 第 246 行.
+INFO: [ view_begin ] --START--
+
+[ 2016-12-29T14:30:51+08:00 ] ::1 /index.php/HealthManager/Member/signIn.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000416s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000630s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000729s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Applications/MAMP/htdocs/HealthManager/ThinkPHP/Library/Think/Session/Driver/Db.class.php 第 95 行.
+INFO: [ view_begin ] --START--
+INFO: Run HealthManager\Behavior\CheckAccessBehavior [ RunTime:0.000302s ]
+INFO: [ view_begin ] --END-- [ RunTime:0.000388s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000120s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000234s ]
+NOTIC: [8] Use of undefined constant signIn - assumed 'signIn' /Applications/MAMP/htdocs/HealthManager/Application/Runtime/Cache/HealthManager/23c8f7904e7df14c8a5356875c906312.php 第 37 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.016564s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.016722s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001814s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001982s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001373s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001497s ]
+
+[ 2016-12-29T14:31:00+08:00 ] ::1 /HealthManager/Member/ajax_signIn
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000535s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000651s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000741s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Applications/MAMP/htdocs/HealthManager/ThinkPHP/Library/Think/Session/Driver/Db.class.php 第 95 行.
+NOTIC: [8] curl_setopt(): CURLOPT_SSL_VERIFYHOST no longer accepts the value 1, value 2 will be used instead /Applications/MAMP/htdocs/HealthManager/Application/Common/Common/function.php 第 66 行.
+
+[ 2016-12-29T14:31:01+08:00 ] ::1 /HealthManager/Member/dashboard
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000476s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000537s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000606s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Applications/MAMP/htdocs/HealthManager/ThinkPHP/Library/Think/Session/Driver/Db.class.php 第 95 行.
+SQL: SHOW COLUMNS FROM `hm_menu` [ RunTime:0.0038s ]
+SQL: SELECT * FROM `hm_menu` WHERE ( role=1 )  [ RunTime:0.0043s ]
+SQL: SHOW COLUMNS FROM `hm_result_report` [ RunTime:0.0049s ]
+SQL: SELECT * FROM `hm_result_report` WHERE ( uid=11 ) GROUP BY report_type ORDER BY add_time DESC  [ RunTime:0.0045s ]
+SQL: SHOW COLUMNS FROM `hm_data_tempe_rature` [ RunTime:0.0037s ]
+SQL: SELECT * FROM `hm_data_tempe_rature` WHERE ( tempe_rature_id=1 ) LIMIT 1   [ RunTime:0.0038s ]
+SQL: SHOW COLUMNS FROM `hm_data_sst` [ RunTime:0.0042s ]
+SQL: SELECT * FROM `hm_data_sst` WHERE ( id=1391 ) LIMIT 1   [ RunTime:0.0042s ]
+SQL: SHOW COLUMNS FROM `hm_data_dynamic_bp` [ RunTime:0.0051s ]
+SQL: SELECT * FROM `hm_data_dynamic_bp` WHERE ( detect_id=336 ) LIMIT 1   [ RunTime:0.0047s ]
+SQL: SHOW COLUMNS FROM `hm_data_blood_oxygen` [ RunTime:0.0048s ]
+SQL: SELECT * FROM `hm_data_blood_oxygen` WHERE ( blood_oxygen_id=1 ) LIMIT 1   [ RunTime:0.0044s ]
+SQL: SHOW COLUMNS FROM `hm_data_blood_sugar` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `hm_data_blood_sugar` WHERE ( blood_sugar_id=6 ) LIMIT 1   [ RunTime:0.0041s ]
+INFO: [ view_begin ] --START--
+SQL: SHOW COLUMNS FROM `hm_user_info_base` [ RunTime:0.0039s ]
+SQL: SELECT `uid`,`username`,`email`,`mobile`,`email_verify`,`reg_time`,`user_type` FROM `hm_user_info_base` WHERE ( uid=11 ) LIMIT 1   [ RunTime:0.0034s ]
+SQL: SHOW COLUMNS FROM `hm_user_info_details` [ RunTime:0.0038s ]
+SQL: SELECT * FROM `hm_user_info_details` WHERE ( 1=1 AND uid='11' ) LIMIT 1   [ RunTime:0.0037s ]
+SQL: SHOW COLUMNS FROM `hm_user_info_extra` [ RunTime:0.0044s ]
+SQL: SELECT * FROM `hm_user_info_extra` WHERE ( 1=1 AND uid='11' ) LIMIT 1   [ RunTime:0.0035s ]
+SQL: SHOW COLUMNS FROM `hm_user_info_certification` [ RunTime:0.0039s ]
+SQL: SELECT * FROM `hm_user_info_certification` WHERE ( 1=1 AND uid='11' ) LIMIT 1   [ RunTime:0.0040s ]
+SQL: SHOW COLUMNS FROM `hm_user_bind` [ RunTime:0.0037s ]
+SQL: SELECT * FROM `hm_user_bind` WHERE ( 1=1 AND uid='11' )  [ RunTime:0.0031s ]
+SQL: SHOW COLUMNS FROM `hm_auth_group_access` [ RunTime:0.0043s ]
+SQL: SELECT `uid`,`group_id`,`title`,`rules` FROM hm_auth_group_access a INNER JOIN hm_auth_group g on a.group_id=g.id  WHERE ( a.uid='11' and g.status='1' )  [ RunTime:0.0037s ]
+SQL: SHOW COLUMNS FROM `hm_auth_rule` [ RunTime:0.0040s ]
+SQL: SELECT `condition`,`name` FROM `hm_auth_rule` WHERE `id` IN ('1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22') AND `type` = 1 AND `status` = 1  [ RunTime:0.0040s ]
+INFO: Run HealthManager\Behavior\CheckAccessBehavior [ RunTime:0.065046s ]
+INFO: [ view_begin ] --END-- [ RunTime:0.065150s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000127s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000204s ]
+NOTIC: [8] Undefined variable: noReadMessageCount /Applications/MAMP/htdocs/HealthManager/Application/Runtime/Cache/HealthManager/66e2f712b0113a25d6a1722f3691af31.php 第 183 行.
+NOTIC: [8] Undefined variable: discription /Applications/MAMP/htdocs/HealthManager/Application/Runtime/Cache/HealthManager/66e2f712b0113a25d6a1722f3691af31.php 第 330 行.
+NOTIC: [8] Undefined variable: message /Applications/MAMP/htdocs/HealthManager/Application/Runtime/Cache/HealthManager/66e2f712b0113a25d6a1722f3691af31.php 第 362 行.
+NOTIC: [8] Undefined index: data /Applications/MAMP/htdocs/HealthManager/Application/Runtime/Cache/HealthManager/66e2f712b0113a25d6a1722f3691af31.php 第 364 行.
+NOTIC: [8] Undefined variable: message /Applications/MAMP/htdocs/HealthManager/Application/Runtime/Cache/HealthManager/66e2f712b0113a25d6a1722f3691af31.php 第 362 行.
+NOTIC: [8] Undefined variable: message /Applications/MAMP/htdocs/HealthManager/Application/Runtime/Cache/HealthManager/66e2f712b0113a25d6a1722f3691af31.php 第 362 行.
+NOTIC: [8] Undefined index: data /Applications/MAMP/htdocs/HealthManager/Application/Runtime/Cache/HealthManager/66e2f712b0113a25d6a1722f3691af31.php 第 364 行.
+NOTIC: [8] Undefined variable: message /Applications/MAMP/htdocs/HealthManager/Application/Runtime/Cache/HealthManager/66e2f712b0113a25d6a1722f3691af31.php 第 362 行.
+NOTIC: [8] Undefined index: data /Applications/MAMP/htdocs/HealthManager/Application/Runtime/Cache/HealthManager/66e2f712b0113a25d6a1722f3691af31.php 第 364 行.
+NOTIC: [8] Undefined variable: message /Applications/MAMP/htdocs/HealthManager/Application/Runtime/Cache/HealthManager/66e2f712b0113a25d6a1722f3691af31.php 第 362 行.
+NOTIC: [8] Undefined index: data /Applications/MAMP/htdocs/HealthManager/Application/Runtime/Cache/HealthManager/66e2f712b0113a25d6a1722f3691af31.php 第 364 行.
+NOTIC: [8] Undefined variable: message /Applications/MAMP/htdocs/HealthManager/Application/Runtime/Cache/HealthManager/66e2f712b0113a25d6a1722f3691af31.php 第 362 行.
+NOTIC: [8] Undefined variable: message /Applications/MAMP/htdocs/HealthManager/Application/Runtime/Cache/HealthManager/66e2f712b0113a25d6a1722f3691af31.php 第 362 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.043761s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.043829s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000601s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000681s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000684s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000783s ]
+

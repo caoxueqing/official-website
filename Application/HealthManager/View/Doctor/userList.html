@@ -1,0 +1,306 @@
+<extend name="Public/base" />
+<block name="head"> <include file="Public/head" /> </block>
+<block name="title">会员列表</block>
+<block name="header"> <include file="Public/header" /> </block>
+<block name="left"> <include file="Public/leftSidebar" /> </block>
+<block name="right">
+
+<style type="text/css">
+	.message td:not(:first-child){
+		line-height: 35px;
+	}
+</style>
+<div class="row">
+	<div class="col-xs-12">
+		<div class="box">
+			<div class="box-header col-lg-2 ">
+				<select class="form-control m-bot15" id="grouplist">
+					<option value="">全部会员</option>
+					<option value="">第二市场</option>
+				</select>
+			</div>
+			<ul class="unstyled inbox-pagination " style="margin-top:8px;">
+				<li>
+					<div class="col-lg-8">
+						<input type="text" style="width: 130px;" name="txtBindUser" class="form-control" id="txtBindUser" value="" placeholder="请输入会员账号"/>
+					</div>
+				</li>
+				<li>
+					<button class="btn btn-danger">绑定</button>
+				</li>
+				<li>
+					<a href="#" data-type="1" onclick="userList(event);" class="btn btn-primary" style="padding: 7px; margin-left: 10px;"> 新建会员</a>
+				</li>
+			</ul>
+			<!-- /.box-header -->
+			<div class="box-body">
+				<table id="mainTable" class="table table-bordered table-striped  table-hover">
+					<thead>
+						<tr>
+							<th>头像</th>
+							<th>姓名</th>
+							<th>性别</th>
+							<th>注册时间</th>
+							<th>所属分组</th>
+							<th>操作</th>
+						</tr>
+					</thead>
+					<tbody>
+						<form action="delAll" method="post" class="messageInfo">
+							<tr class="message">
+								<td><a href="#"><img style="width: 35px; height: 35px;" src=""/></a></td>
+								<td>刘大妈</td>
+								<td>女</td>
+								<td>2016-12-12</td>
+								<td>第二市场</td>
+								<td>
+									<a href="#" class="btn btn-primary btn-xs" data-type="2" onclick="userList(event);">编辑</a>&nbsp;&nbsp;
+									<a href="#" class="btn btn-primary btn-xs">删除</a>
+								</td>
+							</tr>
+						</form>
+					</tbody>
+				
+				</table>
+				<!--分页-->
+				<div class="pages">
+	           		{$page}
+	            </div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-----------新建会员弹窗------------->
+
+ <div class="modal fade" id="uCreateUserModel" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="false">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+				&times;
+				</button>
+				<h4 class="modal-title" id="myModalLabel" style="text-align: center;">新建会员</h4>
+			</div>
+			<div class="modal-body">
+				<div class="panel-body">
+					<div class="tab-content tasi-tab">
+						<div class="tab-pane active" id="popular">
+							<div class="cmxform form-horizontal tasi-form">
+								
+								<form id="newName" action="" method="post">
+									<div class="form-group">
+										<label for="uname" class="col-lg-2 control-label name">姓名</label>
+										<div class="col-lg-4">
+											<input class="form-control" onblur="" id="uname" name="uname" type="text" placeholder="请输入您的真实姓名">
+										</div>
+										<label class="col-lg-2 control-label">性别</label>
+										<div class="col-lg-4" style="padding-top: 9px; line-height: 23px">
+											<label class="label_radio" for="radman" style="">
+					                            <input name="radsex" id="radman" value="1" style="top: 10px" checked="checked" type="radio">男&nbsp;&nbsp;
+					                        </label>
+											<label class="label_radio" for="radwomen">
+					                             <input name="radsex" id="radwomen" value="2" type="radio">女
+					                        </label>
+										</div>
+									</div>
+									<div class="form-group">
+										<label for="ulogname" class="col-lg-2 control-label">登录名称</label>
+										<div class="col-lg-4">
+											<input class="form-control" id="ulogname" name="ulogname" type="text" placeholder="输入您的邮箱地址">
+										</div>
+									</div>
+									<div class="form-group ">
+										<label for="upass" class="control-label col-lg-2">登录密码</label>
+										<div class="col-lg-4">
+											<input class="form-control " id="upass" name="upass" type="password" placeholder="输入您的登陆密码">
+										</div>
+										<label for="uconpass" class="control-label col-lg-2">确认密码</label>
+										<div class="col-lg-4">
+											<input class="form-control " id="uconpass" name="uconpass" type="password" placeholder="与登陆密码保持一致">
+										</div>
+									</div>
+									<div class="form-group">
+										<label for="uidcard" class="col-lg-2 control-label">身份证号</label>
+										<div class="col-lg-6">
+											<input type="text" class="form-control" id="uidcard" name="uidcard" placeholder="身份证包含字母的请输入大写">
+										</div>
+									</div>
+									<div class="form-group">
+										<label for="uphone" class="col-lg-2 control-label">手机</label>
+										<div class="col-lg-6">
+											<input type="text" class="form-control" id="uphone" name="uphone" placeholder="输入您常用手机号码">
+										</div>
+									</div>
+									<div class="form-group">
+										<label for="uemail" class="col-lg-2 control-label">邮箱</label>
+										<div class="col-lg-6">
+											<input type="text" class="form-control" id="uemail" name="uemail" placeholder="请输入您的邮箱地址">
+										</div>
+									</div>
+									<div class="form-group">
+										<label class="col-lg-2 control-label">联系地址</label>
+										<div class="col-lg-8">
+											<input type="text" class="form-control" id="uaddress" name="uaddress" placeholder="请输入您的现居家庭住址">
+										</div>
+									</div>
+									<div class="form-group">
+										<label class="col-lg-2 control-label">所属分组</label>
+										<div class="col-lg-4">
+											<select class="form-control" id="selCreateUser">
+												<option value="-1" selected="selected">默认分组</option>
+												<option value="106">第二市场</option>
+											</select>
+										</div>
+									</div>
+									<div class="modal-footer">
+										<span id="content" style="color: red; margin-right: 20px;"></span>
+										<button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+										<button type="button" class="btn btn-danger" id="newMember">提交</input>
+									</div>
+									
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+</div>
+
+<script type="text/javascript">
+	//新建会员表单验证
+    $("#newMember").on("click",function(){
+    		var username = $("#uname").val();
+    		var ulognames = $("#ulogname").val();
+    		var reg=/^[a-zA-Z0-9]{1,12}@[a-zA-Z0-9]{1,5}(\.[a-zA-Z0-9]{1,5})+$/;
+    		var pwd = $("#upass").val();
+    		var pwds = $("#uconpass").val();
+    		var uidcard = $("#uidcard").val();
+    		var uphone = $("#uphone").val();
+    		var ph = /^(13[0-9]{9})|(18[0-9]{9})|(14[0-9]{9})|(17[0-9]{9})|(15[0-9]{9})$/;
+    		var isIDCard = /^[1-9]\d{7}((0\d)|(1[0-2]))(([0|1|2]\d)|3[0-1])\d{3}$|^[1-9]\d{5}[1-9]\d{3}((0\d)|(1[0-2]))(([0|1|2]\d)|3[0-1])\d{3}([0-9]|X)$/;
+    		var uemail = $("#uemail").val();
+		if(username == ""){
+		    $("#content").text("请输入您的姓名!");
+			return false;
+		}else if(ulognames == ""){
+			$("#content").text("请输入您的登陆名称!");
+			return false;
+		}else if(reg.test(ulognames) == false){
+			$("#content").text("请输入正确的登陆名称，要求为邮箱地址!");
+			return false;
+		}else if(pwd == ""){
+			$("#content").text("请输入您的登陆密码!");
+			return false;
+		}else if(pwds!= pwd){
+			$("#content").text("	确认密码必须与登陆密码保持一致!");
+			return false;
+		}else if(uidcard == ""){
+			$("#content").text("身份证不能为空!");
+			return false;
+		}else if(isIDCard.test(uidcard) == false){
+			$("#content").text("身份证格式不正确!");
+			return false;
+		}else if(ph.test(uphone) == false){
+			$("#content").text("请确认您的手机号是否正确!");
+			return false;
+		}else if(reg.test(uemail) == false){
+			$("#content").text("邮箱格式不正确!");
+			return false;
+		}else{
+			alert("恭喜您！新建会员成功");
+			$("#newName").submit();
+		};
+    });
+	
+</script>
+
+<!------编辑弹窗-------->
+<div class="modal fade" id="iCreateUserModel" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h4 class="modal-title" style="text-align: center;">基本信息</h4>
+            </div>
+            <div class="modal-body">
+                <div class="panel-body">
+                    <div class="tab-content tasi-tab">
+                        <div class="tab-pane active" id="popular">
+                            <div class="cmxform form-horizontal tasi-form">
+                                <div class="form-group">
+                                    <label for="uname" class="col-lg-2 control-label">姓名</label>
+                                    <div class="col-lg-4">
+                                        <input class="form-control" onblur="" id="uuname" name="uname" type="text" value="刘大妈">
+                                    </div>
+                                    <label class="col-lg-2 control-label">性别</label>
+                                    <div class="col-lg-4" style="padding-top: 9px; line-height: 23px">
+                                        <label class="label_radio" for="radman" style="">
+                                            <input name="uradsex" id="uradman" value="1" style="top: 10px" type="radio">男&nbsp;&nbsp;
+                                        </label>
+                                        <label class="label_radio" for="radwomen">
+                                            <input name="uradsex" id="uradwomen" value="2" type="radio" checked="checked">女
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="uidcard" class="col-lg-2 control-label">身份证号</label>
+                                    <div class="col-lg-6">
+                                        <input type="text" class="form-control" id="uuidcard" name="uidcard" value="15454541545454544532">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="ubrith" class="col-lg-2 control-label">出生日期</label>
+                                    <div class="col-lg-6">
+                                        <input type="text" class="form-control" id="uubrith" name="ubrith" value="1780-12-13" placeholder="">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="uphone" class="col-lg-2 control-label">手机</label>
+                                    <div class="col-lg-6">
+                                        <input type="text" class="form-control" id="uuphone" name="uphone" value="15254565462">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="uemail" class="col-lg-2 control-label">邮箱</label>
+                                    <div class="col-lg-6">
+                                        <input type="text" class="form-control" id="uuemail" name="uemail" value="54545@545.com.cn">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-lg-2 control-label">联系地址</label>
+                                    <div class="col-lg-8">
+                                        <input type="text" class="form-control" id="uuaddress" name="uaddress" value="北京昌平区对方快乐的可">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-lg-2 control-label">所属分组</label>
+                                    <div class="col-lg-4">
+                                        <select class="form-control" id="uselCreateUser"><option value="-1" selected="selected">默认分组</option><option value="193">市场三部</option><option value="106">第二市场</option></select>
+                                    </div>
+                                </div>
+                                <div class="form-group" style="text-align: center;">
+                                    <input class="btn btn-danger" type="button" onclick="UpdateUser()" value="保存">
+                                    <input type="hidden" id="hidcheckuser" value="6059">
+                                    <input type="hidden" id="hidcheckgroup" value="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- /.row --> </block>
+<block name="runJsContent"> $('#mainTable').DataTable({
+"paging": true, "lengthChange": true, "searching": true, "ordering":
+false, "info": true, "autoWidth": false }); </block>
+
+<block name="footer"> <include file="Public/footer" /> </block>
+<block name="foot"> <include file="Public/foot" /> </block>
+

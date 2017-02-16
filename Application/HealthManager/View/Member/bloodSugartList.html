@@ -1,0 +1,240 @@
+<extend name="Public/base" />
+<block name="head">
+<include file="Public/head" /> </block>
+<block name="title">血糖信息</block>
+<block name="header">
+<include file="Public/header" /> </block>
+<block name="left">
+<include file="Public/leftSidebar" /> </block>
+<block name="right">
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/AdminLTE/plugins/wdate/bootstraps.min.css"/> 
+<script src="__PUBLIC__/AdminLTE/plugins/echarts/echarts.common.min.js"></script> 
+<div class="row">
+	<div class="col-xs-12">
+		<div class="box" style="padding: 15px 15px;">
+			<div
+				style="padding-left: 10px; padding-right: 10px; width: 100%; min-height: 1px;">
+				<ul class="nav nav-tabs nav-dark" style="background: #ddd"
+					id="myTab">
+					<li class="active"><a href="#all">历史数据</a></li>
+					<li><a href="#added">图形分析</a></li>
+					<li><a href="#unresolved">手动输入</a></li>
+				</ul>
+				<div class="tab-content">
+					<!--  tab-one start  -->
+					<div class="tab-pane active" id="all">
+						<div class="table-responsive">
+							<table id="bloodpressure"
+								class="table table-bordered table-striped">
+								<thead>
+									<tr>
+										<th>测量时间</th>
+										<th>血糖浓度</th>
+										<th>结果分析</th>
+										<th>报告图片</th>
+									</tr>
+								</thead>
+								<tbody>
+									<!-- <if condition="$reportArray neq NULL">  -->
+									<volist name="reportArray" id="vo">
+									<tr class="report">
+										<td>{$vo.detect_time}</td>
+										<td>{$vo['blood_sugar']}</td>
+										<if condition="$vo['report_type'] eq 1">
+										<td>{$vo.report_url}</td>
+										<else />
+										<td>{$vo.content}</td>
+										</if>
+										<!-- <td>{$vo.reference_range}</td> -->
+										<td><a href="{$vo.report_url}">查看详情</a></td>
+									</tr>
+									</volist>
+									<!-- <else /> -->
+									<!-- <p
+										style="font-size: 14px; color: #666; text-align: center; height: 200px; line-height: 200px;"
+										class="noShop">对不起，没有信息！</p>
+									</if> -->
+								</tbody>
+							</table>
+							<div class="pages">{$page}</div>
+						</div>
+					</div>
+					<!--  tab-one end  -->
+					<div id="added" class="tab-pane" style="margin-top: 10px;">
+						<div class="row">
+							<div class="col-md-3">
+								<div class="panel panel-default">
+									<div class="panel-heading">
+										<h4 class="panel-title">选择时间：</h4>
+									</div>
+									<div class="panel-body">
+										<div class="form-group" style="height: 50px;">
+											<label class="col-sm-3 control-label">时间</label>
+											<div class="control-group">
+						                        <div  class="controls input-append date form_date" data-date="" data-date-format=" yyyy年MMdd日  " data-link-field="dtp_input2" data-link-format="yyyy-mm-dd">
+						                          <input size="16" id="rtime" type="text" style="width: 50%; height: 30px;font-size: 12px; value="" placeholder="请点击获取日期" readonly>
+						                          <span class="add-on" style="height: 30px;"><i class="icon-remove"></i></span>
+						                          <span class="add-on" style="height: 30px;"><i class="icon-th"></i></span>
+						                        </div>
+						                    </div>
+										</div>
+										<div class="form-group">
+											<label class="col-sm-3 control-label">时间段</label>
+											<div class="col-sm-9">
+												<div class="rdio rdio-success" style="width: 100px;height: 25px;">
+													<input type="radio" id="rday" value="1" name="rdotime" checked style="float:left;margin-right: 5px;/>
+													<label for="rday">日</label>
+												</div>
+												<div class="rdio rdio-success" style="width: 100px;height: 25px;">
+													<input type="radio" id="rweeks" value="2" name="rdotime"  style="float:left;margin-right: 5px;">
+													<label for="rweeks">周</label>
+												</div>
+												<div class="rdio rdio-success" style="width: 100px;height: 25px;">
+													<input type="radio" id="rmonth" value="3" name="rdotime"  style="float:left;margin-right: 5px;">
+													<label for="rmonth">月</label>
+												</div>
+											</div>
+											<input type="hidden" value="1"  id="rdotime" />
+										</div>
+										<script type="text/javascript">
+										/* 选择的日/周/月 */
+											var times = $('input[name=rdotime]');
+											for(var i = 0;i<times.length;i++){
+											    times.eq(i).change(function(){
+											  	  var rdtime = $(this).val();
+											  		$('#rdotime').attr('value',rdtime);
+											    })
+											}  
+										</script>
+									</div>
+									<div class="panel-footer">
+										<div class="row">
+											<div class="col-sm-9 col-sm-offset-3">
+												<input class="btn btn-primary" type="button" onclick="getBSData(1);" value="确定"/>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-9">
+								 <!-- 为ECharts准备一个具备大小（宽高）的Dom -->
+							    <div id="main" style="width: 500px;height:600px;"></div>
+							    <script type="text/javascript">
+							        // 基于准备好的dom，初始化echarts实例
+							        var myChart = echarts.init(document.getElementById('main'));
+							
+							        // 指定图表的配置项和数据
+							        var option = {
+							            title: {
+							                text: '血糖趋势图',
+							                subtext: '标准范围值6-9-mmol/L'
+							            },
+							            tooltip: {},
+							            legend: {
+							                data:['血糖浓度']    //与series中的name对应
+							            },
+							            toolbox: {
+									        show: true,
+									        feature: {
+									            dataView: {readOnly: false},
+									            magicType: {type: ['line', 'bar']},
+									            restore: {},
+									            saveAsImage: {}
+									        }
+									    },
+							            xAxis: {
+							         		data: <?php echo json_encode(array_keys($result))?> //指定x轴分组["2016-11-07 09:29:09"] 
+							            },
+							            yAxis: {},
+							            series: [       //添加对应的name柱形图
+								            {
+								                name: '血糖',       //类别
+								                type: 'bar',        //图表数据类型
+								               	data: [ <?php echo implode(',',array_values($result))?> ]    //高度
+								            },
+							            ]
+							        };
+							
+							        // 使用刚指定的配置项和数据显示图表。
+							        myChart.setOption(option);
+							    </script>
+							</div>
+						</div>
+					</div>
+					<!--  tab-two end  -->
+					<div id="unresolved" class="tab-pane">
+						<div class="panel panel-default">
+							<div class="panel-body panel-body-nopadding">
+								<form class="form-horizontal form-bordered" method="post"
+									id="save-bg-form">
+									<div class="form-group">
+										<label class="col-sm-3 control-label">浓度值</label>
+										<div class="col-sm-4">
+											<input type="text" name="blood_sugar" class="form-control" />
+										</div>
+									</div>
+									<div class="form-group">
+										<label class="col-sm-3 control-label" for="time">测量时间</label>
+										<div class="col-sm-4">
+											<input type="text" name="detect_time" class="form-control">
+										</div>
+										<!-- <div class="col-sm-4">
+                                            	<input type="text" id="time" class="form-control" readonly="readonly" onclick="WdatePicker({ dateFmt: 'yyyy-MM-dd HH:mm:ss' })">
+                                        	</div> -->
+									</div>
+								</form>
+							</div>
+							<!-- panel-body -->
+							<div class="panel-footer">
+								<div class="row">
+									<div class="col-sm-6 col-sm-offset-3">
+										<button class="btn btn-primary" type="button"
+											onclick="saveBSData();">保存</button>
+										&nbsp;
+										<!-- <button class="btn btn-default" type="button" onclick="doclear();">清空</button> -->
+									</div>
+								</div>
+							</div>
+							<!-- panel-footer -->
+						</div>
+					</div>
+					<!--  tab-three end  -->
+				</div>
+				<!--  tab-content end  -->
+			</div>
+			<script>
+				$(function() {
+					$('#myTab a:last').tab('show');
+				})
+				$('#myTab a').click(function(e) {
+					e.preventDefault();
+					$(this).tab('show');
+				})
+			</script>
+		</div>
+		<!-- /.box -->
+	</div>
+</div>
+<script type="text/javascript">
+    // times
+    $('.form_date').datetimepicker({
+      language: 'fr',
+      weekStart: 1,
+      todayBtn: 1,
+      autoclose: 1,
+      todayHighlight: 1,
+      startView: 2,
+      minView: 2,
+      forceParse: 0
+    });
+      
+</script>
+<!-- /.row --> </block>
+<block name="runJsContent"> $('#mainTable').DataTable({
+"paging": true, "lengthChange": true, "searching": true, "ordering":
+false, "info": true, "autoWidth": false }); </block>
+
+<block name="footer">
+<include file="Public/footer" /> </block>
+<block name="foot">
+<include file="Public/foot" /> </block>

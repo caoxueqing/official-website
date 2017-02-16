@@ -1,0 +1,224 @@
+[ 2017-01-06T09:40:58+08:00 ] ::1 /index.php/UserCenter/Api/signIn?account=30178270@qq.com&password=123456&userType=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000135s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000076s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000148s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Applications/MAMP/htdocs/HealthManager/ThinkPHP/Library/Think/Session/Driver/Db.class.php 第 95 行.
+SQL: SHOW COLUMNS FROM `hm_user_info_base` [ RunTime:0.1211s ]
+SQL: SHOW COLUMNS FROM `hm_user_info_base` [ RunTime:0.1217s ]
+SQL: SELECT `email`,`password`,`salt`,`uid`,`reg_time` FROM `hm_user_info_base` WHERE `email` = '30178270@qq.com' LIMIT 1   [ RunTime:0.1196s ]
+SQL: SELECT * FROM `hm_user_info_base` WHERE ( uid = '11' ) LIMIT 1   [ RunTime:0.1193s ]
+SQL: SHOW COLUMNS FROM `hm_user_info_details` [ RunTime:0.1202s ]
+SQL: SELECT * FROM `hm_user_info_details` WHERE ( uid=11 ) LIMIT 1   [ RunTime:0.1176s ]
+NOTIC: [8] Use of undefined constant F - assumed 'F' /Applications/MAMP/htdocs/HealthManager/Application/UserCenter/Model/UserModel.class.php 第 289 行.
+SQL: SHOW COLUMNS FROM `hm_user_login_token` [ RunTime:0.1290s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `hm_user_login_token` WHERE `uid` = 11 LIMIT 1   [ RunTime:0.1431s ]
+SQL: UPDATE `hm_user_login_token` SET `uid`='11',`token`='8618ec2b71c1386ae321e75e572cd672',`update_time`='2017-01-06 09:40:56' WHERE `uid` = 11 [ RunTime:0.1555s ]
+SQL: SELECT `uid`,`username`,`email`,`mobile`,`email_verify`,`reg_time`,`user_type` FROM `hm_user_info_base` WHERE `uid` = 11 LIMIT 1   [ RunTime:0.0783s ]
+SQL: SHOW COLUMNS FROM `hm_user_info_details` [ RunTime:0.0917s ]
+SQL: SELECT * FROM `hm_user_info_details` WHERE ( 1=1 AND uid='11' ) LIMIT 1   [ RunTime:0.1240s ]
+SQL: SHOW COLUMNS FROM `hm_user_info_extra` [ RunTime:0.4215s ]
+SQL: SELECT * FROM `hm_user_info_extra` WHERE ( 1=1 AND uid='11' ) LIMIT 1   [ RunTime:0.5078s ]
+SQL: SHOW COLUMNS FROM `hm_user_info_certification` [ RunTime:0.1133s ]
+SQL: SELECT * FROM `hm_user_info_certification` WHERE ( 1=1 AND uid='11' ) LIMIT 1   [ RunTime:0.1362s ]
+SQL: SHOW COLUMNS FROM `hm_user_bind` [ RunTime:0.5912s ]
+SQL: SELECT * FROM `hm_user_bind` WHERE ( 1=1 AND uid='11' )  [ RunTime:0.0634s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead /Applications/MAMP/htdocs/HealthManager/Application/Common/Common/function.php 第 196 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000113s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000176s ]
+
+[ 2017-01-06T09:41:00+08:00 ] ::1 /index.php/UserCenter/Api/signIn?account=30178270@qq.com&password=123456&userType=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000143s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000078s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000140s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Applications/MAMP/htdocs/HealthManager/ThinkPHP/Library/Think/Session/Driver/Db.class.php 第 95 行.
+SQL: SHOW COLUMNS FROM `hm_user_info_base` [ RunTime:0.0758s ]
+SQL: SHOW COLUMNS FROM `hm_user_info_base` [ RunTime:0.0996s ]
+SQL: SELECT `email`,`password`,`salt`,`uid`,`reg_time` FROM `hm_user_info_base` WHERE `email` = '30178270@qq.com' LIMIT 1   [ RunTime:0.1210s ]
+SQL: SELECT * FROM `hm_user_info_base` WHERE ( uid = '11' ) LIMIT 1   [ RunTime:0.1152s ]
+SQL: SHOW COLUMNS FROM `hm_user_info_details` [ RunTime:0.1157s ]
+SQL: SELECT * FROM `hm_user_info_details` WHERE ( uid=11 ) LIMIT 1   [ RunTime:0.1198s ]
+NOTIC: [8] Use of undefined constant F - assumed 'F' /Applications/MAMP/htdocs/HealthManager/Application/UserCenter/Model/UserModel.class.php 第 289 行.
+SQL: SHOW COLUMNS FROM `hm_user_login_token` [ RunTime:0.1238s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `hm_user_login_token` WHERE `uid` = 11 LIMIT 1   [ RunTime:0.1240s ]
+SQL: UPDATE `hm_user_login_token` SET `uid`='11',`token`='8618ec2b71c1386ae321e75e572cd672',`update_time`='2017-01-06 09:40:56' WHERE `uid` = 11 [ RunTime:0.1381s ]
+SQL: SELECT `uid`,`username`,`email`,`mobile`,`email_verify`,`reg_time`,`user_type` FROM `hm_user_info_base` WHERE `uid` = 11 LIMIT 1   [ RunTime:0.7416s ]
+SQL: SHOW COLUMNS FROM `hm_user_info_details` [ RunTime:0.9296s ]
+SQL: SELECT * FROM `hm_user_info_details` WHERE ( 1=1 AND uid='11' ) LIMIT 1   [ RunTime:0.1841s ]
+SQL: SHOW COLUMNS FROM `hm_user_info_extra` [ RunTime:1.2898s ]
+SQL: SELECT * FROM `hm_user_info_extra` WHERE ( 1=1 AND uid='11' ) LIMIT 1   [ RunTime:0.0899s ]
+SQL: SHOW COLUMNS FROM `hm_user_info_certification` [ RunTime:0.0667s ]
+SQL: SELECT * FROM `hm_user_info_certification` WHERE ( 1=1 AND uid='11' ) LIMIT 1   [ RunTime:0.0746s ]
+SQL: SHOW COLUMNS FROM `hm_user_bind` [ RunTime:0.0946s ]
+SQL: SELECT * FROM `hm_user_bind` WHERE ( 1=1 AND uid='11' )  [ RunTime:0.0828s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead /Applications/MAMP/htdocs/HealthManager/Application/Common/Common/function.php 第 196 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000117s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000182s ]
+
+[ 2017-01-06T14:07:37+08:00 ] ::1 /index.php/UserCenter/Api/signIn?account=30178270@qq.com&password=123456&userType=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000035s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000681s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000097s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000174s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Applications/MAMP/htdocs/HealthManager/ThinkPHP/Library/Think/Session/Driver/Db.class.php 第 95 行.
+SQL: SHOW COLUMNS FROM `hm_user_info_base` [ RunTime:0.0250s ]
+SQL: SHOW COLUMNS FROM `hm_user_info_base` [ RunTime:0.0259s ]
+SQL: SELECT `email`,`password`,`salt`,`uid`,`reg_time` FROM `hm_user_info_base` WHERE `email` = '30178270@qq.com' LIMIT 1   [ RunTime:0.0240s ]
+SQL: SELECT * FROM `hm_user_info_base` WHERE ( uid = '11' ) LIMIT 1   [ RunTime:0.0252s ]
+SQL: SHOW COLUMNS FROM `hm_user_info_details` [ RunTime:0.0239s ]
+SQL: SELECT * FROM `hm_user_info_details` WHERE ( uid=11 ) LIMIT 1   [ RunTime:0.0249s ]
+NOTIC: [8] Use of undefined constant F - assumed 'F' /Applications/MAMP/htdocs/HealthManager/Application/UserCenter/Model/UserModel.class.php 第 289 行.
+SQL: SHOW COLUMNS FROM `hm_user_login_token` [ RunTime:0.0761s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `hm_user_login_token` WHERE `uid` = 11 LIMIT 1   [ RunTime:0.1033s ]
+SQL: UPDATE `hm_user_login_token` SET `uid`='11',`token`='b34511242497ec8feadf6d971b84930c',`update_time`='2017-01-06 14:07:36' WHERE `uid` = 11 [ RunTime:0.1183s ]
+SQL: SELECT `uid`,`username`,`email`,`mobile`,`email_verify`,`reg_time`,`user_type` FROM `hm_user_info_base` WHERE `uid` = 11 LIMIT 1   [ RunTime:0.1498s ]
+SQL: SHOW COLUMNS FROM `hm_user_info_details` [ RunTime:0.0310s ]
+SQL: SELECT * FROM `hm_user_info_details` WHERE ( 1=1 AND uid='11' ) LIMIT 1   [ RunTime:0.0264s ]
+SQL: SHOW COLUMNS FROM `hm_user_info_extra` [ RunTime:0.0370s ]
+SQL: SELECT * FROM `hm_user_info_extra` WHERE ( 1=1 AND uid='11' ) LIMIT 1   [ RunTime:0.0250s ]
+SQL: SHOW COLUMNS FROM `hm_user_info_certification` [ RunTime:0.0259s ]
+SQL: SELECT * FROM `hm_user_info_certification` WHERE ( 1=1 AND uid='11' ) LIMIT 1   [ RunTime:0.0363s ]
+SQL: SHOW COLUMNS FROM `hm_user_bind` [ RunTime:0.0215s ]
+SQL: SELECT * FROM `hm_user_bind` WHERE ( 1=1 AND uid='11' )  [ RunTime:0.0348s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead /Applications/MAMP/htdocs/HealthManager/Application/Common/Common/function.php 第 196 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000131s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000196s ]
+
+[ 2017-01-06T15:34:59+08:00 ] ::1 /index.php/UserCenter/Api/signIn?account=30178270@qq.com&password=123456&userType=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000032s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000489s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000240s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000411s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Applications/MAMP/htdocs/HealthManager/ThinkPHP/Library/Think/Session/Driver/Db.class.php 第 95 行.
+SQL: SHOW COLUMNS FROM `hm_user_info_base` [ RunTime:0.0043s ]
+SQL: SHOW COLUMNS FROM `hm_user_info_base` [ RunTime:0.0040s ]
+SQL: SELECT `email`,`password`,`salt`,`uid`,`reg_time` FROM `hm_user_info_base` WHERE `email` = '30178270@qq.com' LIMIT 1   [ RunTime:0.0041s ]
+SQL: SELECT * FROM `hm_user_info_base` WHERE ( uid = '11' ) LIMIT 1   [ RunTime:0.0044s ]
+SQL: SHOW COLUMNS FROM `hm_user_info_details` [ RunTime:0.0045s ]
+SQL: SELECT * FROM `hm_user_info_details` WHERE ( uid=11 ) LIMIT 1   [ RunTime:0.0038s ]
+NOTIC: [8] Use of undefined constant F - assumed 'F' /Applications/MAMP/htdocs/HealthManager/Application/UserCenter/Model/UserModel.class.php 第 289 行.
+SQL: SHOW COLUMNS FROM `hm_user_login_token` [ RunTime:0.0043s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `hm_user_login_token` WHERE `uid` = 11 LIMIT 1   [ RunTime:0.0032s ]
+SQL: UPDATE `hm_user_login_token` SET `uid`='11',`token`='eadf8a31db57b6f9af516f9e80d6c90e',`update_time`='2017-01-06 15:34:58' WHERE `uid` = 11 [ RunTime:0.0040s ]
+SQL: SELECT `uid`,`username`,`email`,`mobile`,`email_verify`,`reg_time`,`user_type` FROM `hm_user_info_base` WHERE `uid` = 11 LIMIT 1   [ RunTime:0.0074s ]
+SQL: SHOW COLUMNS FROM `hm_user_info_details` [ RunTime:0.0045s ]
+SQL: SELECT * FROM `hm_user_info_details` WHERE ( 1=1 AND uid='11' ) LIMIT 1   [ RunTime:0.0040s ]
+SQL: SHOW COLUMNS FROM `hm_user_info_extra` [ RunTime:0.0055s ]
+SQL: SELECT * FROM `hm_user_info_extra` WHERE ( 1=1 AND uid='11' ) LIMIT 1   [ RunTime:0.0053s ]
+SQL: SHOW COLUMNS FROM `hm_user_info_certification` [ RunTime:0.0043s ]
+SQL: SELECT * FROM `hm_user_info_certification` WHERE ( 1=1 AND uid='11' ) LIMIT 1   [ RunTime:0.0047s ]
+SQL: SHOW COLUMNS FROM `hm_user_bind` [ RunTime:0.0038s ]
+SQL: SELECT * FROM `hm_user_bind` WHERE ( 1=1 AND uid='11' )  [ RunTime:0.0050s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead /Applications/MAMP/htdocs/HealthManager/Application/Common/Common/function.php 第 196 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000118s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000189s ]
+
+[ 2017-01-06T16:25:33+08:00 ] ::1 /index.php/UserCenter/Api/signIn?account=shandawei@ainia.com.cn&password=123456&userType=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000070s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000521s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000332s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000512s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Applications/MAMP/htdocs/HealthManager/ThinkPHP/Library/Think/Session/Driver/Db.class.php 第 95 行.
+SQL: SHOW COLUMNS FROM `hm_user_info_base` [ RunTime:0.0068s ]
+SQL: SHOW COLUMNS FROM `hm_user_info_base` [ RunTime:0.0051s ]
+SQL: SELECT `email`,`password`,`salt`,`uid`,`reg_time` FROM `hm_user_info_base` WHERE `email` = 'shandawei@ainia.com.cn' LIMIT 1   [ RunTime:0.0049s ]
+SQL: SELECT * FROM `hm_user_info_base` WHERE ( uid = '1' ) LIMIT 1   [ RunTime:0.0049s ]
+SQL: SHOW COLUMNS FROM `hm_user_info_details` [ RunTime:0.0048s ]
+SQL: SELECT * FROM `hm_user_info_details` WHERE ( uid=1 ) LIMIT 1   [ RunTime:0.0059s ]
+NOTIC: [8] Use of undefined constant F - assumed 'F' /Applications/MAMP/htdocs/HealthManager/Application/UserCenter/Model/UserModel.class.php 第 289 行.
+SQL: SHOW COLUMNS FROM `hm_user_login_token` [ RunTime:0.0063s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `hm_user_login_token` WHERE `uid` = 1 LIMIT 1   [ RunTime:0.0042s ]
+SQL: UPDATE `hm_user_login_token` SET `uid`='1',`token`='1b8329e8483daaa67289e77260fd666c',`update_time`='2017-01-06 16:25:33' WHERE `uid` = 1 [ RunTime:0.0048s ]
+SQL: SELECT `uid`,`username`,`email`,`mobile`,`email_verify`,`reg_time`,`user_type` FROM `hm_user_info_base` WHERE `uid` = 1 LIMIT 1   [ RunTime:0.0067s ]
+SQL: SHOW COLUMNS FROM `hm_user_info_details` [ RunTime:0.0069s ]
+SQL: SELECT * FROM `hm_user_info_details` WHERE ( 1=1 AND uid='1' ) LIMIT 1   [ RunTime:0.0072s ]
+SQL: SHOW COLUMNS FROM `hm_user_info_extra` [ RunTime:0.0061s ]
+SQL: SELECT * FROM `hm_user_info_extra` WHERE ( 1=1 AND uid='1' ) LIMIT 1   [ RunTime:0.0050s ]
+SQL: SHOW COLUMNS FROM `hm_user_info_certification` [ RunTime:0.0045s ]
+SQL: SELECT * FROM `hm_user_info_certification` WHERE ( 1=1 AND uid='1' ) LIMIT 1   [ RunTime:0.0055s ]
+SQL: SHOW COLUMNS FROM `hm_user_bind` [ RunTime:0.0045s ]
+SQL: SELECT * FROM `hm_user_bind` WHERE ( 1=1 AND uid='1' )  [ RunTime:0.0039s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead /Applications/MAMP/htdocs/HealthManager/Application/Common/Common/function.php 第 196 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000117s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000187s ]
+
+[ 2017-01-06T16:49:16+08:00 ] ::1 /index.php/UserCenter/Api/signIn?account=shandawei@ainia.com.cn&password=123456&userType=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000201s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000087s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000154s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Applications/MAMP/htdocs/HealthManager/ThinkPHP/Library/Think/Session/Driver/Db.class.php 第 95 行.
+SQL: SHOW COLUMNS FROM `hm_user_info_base` [ RunTime:0.0246s ]
+SQL: SHOW COLUMNS FROM `hm_user_info_base` [ RunTime:0.0266s ]
+SQL: SELECT `email`,`password`,`salt`,`uid`,`reg_time` FROM `hm_user_info_base` WHERE `email` = 'shandawei@ainia.com.cn' LIMIT 1   [ RunTime:0.0226s ]
+SQL: SELECT * FROM `hm_user_info_base` WHERE ( uid = '1' ) LIMIT 1   [ RunTime:0.0238s ]
+SQL: SHOW COLUMNS FROM `hm_user_info_details` [ RunTime:0.0236s ]
+SQL: SELECT * FROM `hm_user_info_details` WHERE ( uid=1 ) LIMIT 1   [ RunTime:0.0246s ]
+NOTIC: [8] Use of undefined constant F - assumed 'F' /Applications/MAMP/htdocs/HealthManager/Application/UserCenter/Model/UserModel.class.php 第 289 行.
+SQL: SHOW COLUMNS FROM `hm_user_login_token` [ RunTime:0.0221s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `hm_user_login_token` WHERE `uid` = 1 LIMIT 1   [ RunTime:0.0238s ]
+SQL: UPDATE `hm_user_login_token` SET `uid`='1',`token`='285674b48fe088529d0d6d710feed85a',`update_time`='2017-01-06 16:49:15' WHERE `uid` = 1 [ RunTime:0.0243s ]
+SQL: SELECT `uid`,`username`,`email`,`mobile`,`email_verify`,`reg_time`,`user_type` FROM `hm_user_info_base` WHERE `uid` = 1 LIMIT 1   [ RunTime:0.0250s ]
+SQL: SHOW COLUMNS FROM `hm_user_info_details` [ RunTime:0.0306s ]
+SQL: SELECT * FROM `hm_user_info_details` WHERE ( 1=1 AND uid='1' ) LIMIT 1   [ RunTime:0.0257s ]
+SQL: SHOW COLUMNS FROM `hm_user_info_extra` [ RunTime:0.0258s ]
+SQL: SELECT * FROM `hm_user_info_extra` WHERE ( 1=1 AND uid='1' ) LIMIT 1   [ RunTime:0.0281s ]
+SQL: SHOW COLUMNS FROM `hm_user_info_certification` [ RunTime:0.0340s ]
+SQL: SELECT * FROM `hm_user_info_certification` WHERE ( 1=1 AND uid='1' ) LIMIT 1   [ RunTime:0.0242s ]
+SQL: SHOW COLUMNS FROM `hm_user_bind` [ RunTime:0.0521s ]
+SQL: SELECT * FROM `hm_user_bind` WHERE ( 1=1 AND uid='1' )  [ RunTime:0.0626s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead /Applications/MAMP/htdocs/HealthManager/Application/Common/Common/function.php 第 196 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000114s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000222s ]
+
+[ 2017-01-06T17:11:48+08:00 ] ::1 /index.php/UserCenter/Api/signIn?account=shandawei@ainia.com.cn&password=123456&userType=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000217s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000142s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000202s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Applications/MAMP/htdocs/HealthManager/ThinkPHP/Library/Think/Session/Driver/Db.class.php 第 95 行.
+SQL: SHOW COLUMNS FROM `hm_user_info_base` [ RunTime:0.0057s ]
+SQL: SHOW COLUMNS FROM `hm_user_info_base` [ RunTime:0.0056s ]
+SQL: SELECT `email`,`password`,`salt`,`uid`,`reg_time` FROM `hm_user_info_base` WHERE `email` = 'shandawei@ainia.com.cn' LIMIT 1   [ RunTime:0.0044s ]
+SQL: SELECT * FROM `hm_user_info_base` WHERE ( uid = '1' ) LIMIT 1   [ RunTime:0.0050s ]
+SQL: SHOW COLUMNS FROM `hm_user_info_details` [ RunTime:0.0050s ]
+SQL: SELECT * FROM `hm_user_info_details` WHERE ( uid=1 ) LIMIT 1   [ RunTime:0.0048s ]
+NOTIC: [8] Use of undefined constant F - assumed 'F' /Applications/MAMP/htdocs/HealthManager/Application/UserCenter/Model/UserModel.class.php 第 289 行.
+SQL: SHOW COLUMNS FROM `hm_user_login_token` [ RunTime:0.0048s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `hm_user_login_token` WHERE `uid` = 1 LIMIT 1   [ RunTime:0.0043s ]
+SQL: UPDATE `hm_user_login_token` SET `uid`='1',`token`='081a779ef01f36ab6532cceacac35fcb',`update_time`='2017-01-06 17:11:48' WHERE `uid` = 1 [ RunTime:0.0047s ]
+SQL: SELECT `uid`,`username`,`email`,`mobile`,`email_verify`,`reg_time`,`user_type` FROM `hm_user_info_base` WHERE `uid` = 1 LIMIT 1   [ RunTime:0.0043s ]
+SQL: SHOW COLUMNS FROM `hm_user_info_details` [ RunTime:0.0049s ]
+SQL: SELECT * FROM `hm_user_info_details` WHERE ( 1=1 AND uid='1' ) LIMIT 1   [ RunTime:0.0047s ]
+SQL: SHOW COLUMNS FROM `hm_user_info_extra` [ RunTime:0.0047s ]
+SQL: SELECT * FROM `hm_user_info_extra` WHERE ( 1=1 AND uid='1' ) LIMIT 1   [ RunTime:0.0048s ]
+SQL: SHOW COLUMNS FROM `hm_user_info_certification` [ RunTime:0.0046s ]
+SQL: SELECT * FROM `hm_user_info_certification` WHERE ( 1=1 AND uid='1' ) LIMIT 1   [ RunTime:0.0048s ]
+SQL: SHOW COLUMNS FROM `hm_user_bind` [ RunTime:0.0049s ]
+SQL: SELECT * FROM `hm_user_bind` WHERE ( 1=1 AND uid='1' )  [ RunTime:0.0047s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead /Applications/MAMP/htdocs/HealthManager/Application/Common/Common/function.php 第 196 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000117s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000194s ]
+

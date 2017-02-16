@@ -1,0 +1,238 @@
+<header class="main-header">
+<link rel="stylesheet"
+	href="__PUBLIC__/AdminLTE/bootstrap/css/bootstrap.min.css">
+<!-- Font Awesome -->
+<link rel="stylesheet"
+	href="https://cdn.bootcss.com/font-awesome/4.4.0/css/font-awesome.min.css">
+<!-- Ionicons -->
+<link rel="stylesheet"
+	href="https://cdn.bootcss.com/ionicons/2.0.1/css/ionicons.min.css">
+<!-- DataTables -->
+<link rel="stylesheet"
+	href="__PUBLIC__/AdminLTE/plugins/datatables/dataTables.bootstrap.css">
+<!-- Theme style -->
+<link rel="stylesheet"
+	href="__PUBLIC__/AdminLTE/dist/css/AdminLTE.min.css">
+<!-- AdminLTE Skins. Choose a skin from the css/skins
+       folder instead of downloading all of them to reduce the load. -->
+<link rel="stylesheet"
+	href="__PUBLIC__/AdminLTE/dist/css/skins/_all-skins.min.css">
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/AdminLTE/plugins/wdate/bootstrap-datetimepicker.min.css"/> 
+<!-- jQuery 2.1.4 -->
+<script src="__PUBLIC__/AdminLTE/plugins/jQuery/jquery-2.2.3.min.js"></script>
+	<!-- Bootstrap 3.3.5 -->
+<script src="__PUBLIC__/AdminLTE/bootstrap/js/bootstrap.min.js"></script>
+<!-- DataTables -->
+<script
+	src="__PUBLIC__/AdminLTE/plugins/datatables/jquery.dataTables.min.js"></script>
+<script
+	src="__PUBLIC__/AdminLTE/plugins/datatables/dataTables.bootstrap.min.js"></script>
+<!-- SlimScroll -->
+<script
+	src="__PUBLIC__/AdminLTE/plugins/slimScroll/jquery.slimscroll.min.js"></script>
+<!-- FastClick -->
+<script src="__PUBLIC__/AdminLTE/plugins/fastclick/fastclick.js"></script>
+<!-- AdminLTE App -->
+<script src="__PUBLIC__/AdminLTE/dist/js/app.min.js"></script>
+<!-- Sparkline -->
+<script
+	src="__PUBLIC__/AdminLTE/plugins/sparkline/jquery.sparkline.min.js"></script>
+<!-- jvectormap -->
+<script
+	src="__PUBLIC__/AdminLTE/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js"></script>
+<script
+	src="__PUBLIC__/AdminLTE/plugins/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
+<!-- SlimScroll 1.3.0 -->
+<script
+	src="__PUBLIC__/AdminLTE/plugins/slimScroll/jquery.slimscroll.min.js"></script>
+<!-- ChartJS 1.0.1 -->
+<script src="__PUBLIC__/AdminLTE/plugins/chartjs/Chart.min.js"></script>
+<!-- AdminLTE for demo purposes -->
+<script src="__PUBLIC__/AdminLTE/bootstrap/js/user.js"></script>
+<!-- AdminLTE for demo purposes -->
+<script src="__PUBLIC__/AdminLTE/bootstrap/js/doctor.js"></script>
+<script src="__PUBLIC__/AdminLTE/plugins/wdate/bootstrap-datetimepicker.min.js" charset="utf-8"></script>  
+<script src="__PUBLIC__/AdminLTE/plugins/wdate/bootstrap-datetimepicker.fr.js" charset="utf-8"></script> 
+
+<script type="text/javascript">
+	//下面用于图片上传预览功能
+	function setImagePreview(avalue) {
+		var docObj = document.getElementById("doc");
+
+		var imgObjPreview = document.getElementById("preview");
+		if (docObj.files && docObj.files[0]) {
+			//火狐下，直接设img属性
+			imgObjPreview.style.display = 'block';
+			imgObjPreview.style.width = '88px';
+			imgObjPreview.style.height = '92px';
+			//imgObjPreview.src = docObj.files[0].getAsDataURL();
+
+			//火狐7以上版本不能用上面的getAsDataURL()方式获取，需要一下方式
+			imgObjPreview.src = window.URL.createObjectURL(docObj.files[0]);
+		} else {
+			//IE下，使用滤镜
+			docObj.select();
+			var imgSrc = document.selection.createRange().text;
+			var localImagId = document.getElementById("localImag");
+			//必须设置初始大小
+			localImagId.style.width = "88px";
+			localImagId.style.height = "92px";
+			//图片异常的捕捉，防止用户修改后缀来伪造图片
+			try {
+				localImagId.style.filter = "progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=scale)";
+				localImagId.filters
+						.item("DXImageTransform.Microsoft.AlphaImageLoader").src = imgSrc;
+			} catch (e) {
+				alert("您上传的图片格式不正确，请重新选择!");
+				return false;
+			}
+			imgObjPreview.style.display = 'none';
+			document.selection.empty();
+		}
+		return true;
+	}
+</script>
+	<!-- Logo -->
+	<a href="{:U('dashboard')}" class="logo">
+		<!-- <span class="logo-mini"> <b>A</b>LT </span>  -->
+		<span class="logo-lg"> 
+			<if condition="$userData.user_type eq 1">
+				<b>个人健康管理平台</b>
+			<elseif condition="$userData.user_type eq 2"/>
+				<b>医生健康管理平台</b>
+			<else/>
+				<b>群组健康管理平台</b>
+			</if>
+		</span>
+	</a>
+	<!-- Header Navbar: style can be found in header.less -->
+	<nav class="navbar navbar-static-top">
+		<!-- Sidebar toggle button-->
+		<a href="#" class="sidebar-toggle" data-toggle="offcanvas"
+			role="button"> <span class="sr-only">Toggle navigation</span>
+		</a>
+		<div class="navbar-custom-menu">
+			<ul class="nav navbar-nav">
+				<li class="dropdown messages-menu" onclick="messageCenter();">
+					<a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown"> 
+						<i class="fa fa-envelope-o"></i> 
+						<!-- 未读消息数 -->
+						<if condition="$noReadMessageCount eq 0">
+							<span class="label label-success"></span>
+						<else/>
+							<span class="label label-success">{$noReadMessageCount}</span>
+						</if>
+					</a>
+				</li>
+				<!-- User Account: style can be found in dropdown.less -->
+				<li class="dropdown user user-menu">
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown"> 
+						<if condition="$userData.avatar neq null">
+							<img src="http://ainia.oss-cn-beijing.aliyuncs.com/{$userData.avatar}" class="user-image">
+						<else />
+							<img src="https://img.alicdn.com/tps/TB1BsZ6JpXXXXaZXpXXXXXXXXXX-81-81.png" class="user-image" alt="User Image">
+						</if>
+						
+						<if condition="$userData.nickname neq null">
+							<span class="hidden-xs">{$userData.nickname}</span>
+						<else />
+							<span class="hidden-xs">{$userData.email}</span>
+						</if>
+					</a>
+					<ul class="dropdown-menu">
+						<!-- User image -->
+						<li class="user-header">
+							<if condition="$userData.avatar neq null">
+								<img src="http://ainia.oss-cn-beijing.aliyuncs.com/{$userData.avatar}" class="user-image" style="float:none">
+							<else />
+								<img src="https://img.alicdn.com/tps/TB1BsZ6JpXXXXaZXpXXXXXXXXXX-81-81.png" class="user-image" alt="User Image" style="float:none">
+							</if>
+							<p>
+								<if condition="$userData.nickname neq null">
+									{$userData.nickname} 
+								<else />
+									{$userData.email}
+								</if>
+								<small>注册时间:{$userData.reg_time}</small>
+							</p>
+						</li>
+						<!-- Menu Footer-->
+						<li class="user-footer">
+							<div class="pull-left">
+								<a href="#" class="btn btn-default btn-flat" data-toggle="modal" data-target="#changeAvatar">修改头像 </a>
+							</div>
+							<div class="pull-right">
+								<a href="{:U('signOut')}" class="btn btn-default btn-flat">退出登录</a>
+							</div>
+						</li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+	</nav>
+</header>
+
+<!-- Modal -->
+<div class="modal fade" id="changeAvatar" tabindex="-1" role="dialog"
+	aria-labelledby="myModalLabel">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal"
+					aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+				<h4 class="modal-title" id="myModalLabel">修改头像</h4>
+			</div>
+			<div class="modal-body">
+				<!-- /.box-header -->
+				<!-- form start-->
+				<form id="uploadForm" class="form-horizontal" name="fileinfo" method="post" enctype="multipart/form-data">
+					<div class="form-group">
+					 	<div class="touxiang" style="margin-left:15px">
+					 		<div class="img" id="localImag">
+						 		<if condition="$userData.avatar neq null">
+	                           		<img src="http://ainia.oss-cn-beijing.aliyuncs.com/{$userData.avatar}" alt="" id="preview" style="margin-top:0px;width:88px;height:92px;margin-bottom: 10px;"/>
+	                           	<else />
+	                           		<img src="https://img.alicdn.com/tps/TB1BsZ6JpXXXXaZXpXXXXXXXXXX-81-81.png" alt="" id="preview" style="margin-top:0px;width:88px;height:92px;margin-bottom: 10px;"/>
+	                        	</if>	
+                           		<input type="file" style="height:30px;" name="avatar" id="doc" onchange="javascript:setImagePreview();"/>
+                           	</div>
+					 	</div>
+						<input type="hidden" value="{$userData.uid}" name="uid" id="uid" />
+					</div>
+					<!-- /.box-footer -->
+				</form>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+				<button type="button"  class="btn btn-danger" onclick="changeAvatar();">修改</button>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- <script type="text/javascript">
+    $(document).ready(function () {
+        GetMsgCount();
+    });
+    function GetMsgCount() {
+        $.ajax({
+            type: "GET",
+            url: "ajax_getMsgCount",
+            async: false,
+            dataType: "json",
+            data: { LField: '[{"Not":false,"Value":' + $("#hidUID").val() + ',"Operator":0,"PropertyName":"UserId"},{"Not":false,"Value":1,"Operator":0,"PropertyName":"Status"}]' },
+            success: function (data) {
+                if (data.status == 0) {
+                    if (data.Obj != 0) {
+                        $("#msgcount").empty();
+                        $("#msgcount").text(data.Obj);
+                    } else {
+                        $("#msgcount").empty();
+                    }
+                }
+            }
+        });
+    }
+</script>
+ -->

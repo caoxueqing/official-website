@@ -1,0 +1,100 @@
+<extend name="Public/base" />
+<block name="head"> <include file="Public/head" /> </block>
+<block name="title">咨询列表</block>
+<block name="header"> <include file="Public/header" /> </block>
+<block name="left"> <include file="Public/leftSidebar" /> </block>
+<block name="right">
+
+<div class="row">
+	<div class="col-xs-12">
+		<div class="box">
+			<div class="box-header col-lg-2 ">
+				<select class="form-control m-bot15" id="grouplist">
+					<option value="">全部咨询</option>
+					<option value="">未回复</option>
+					<option value="">已回复</option>
+				</select>
+			</div>
+			<!-- /.box-header -->
+			<div class="box-body">
+				<table id="mainTable" class="table table-bordered table-striped table-hover">
+					<thead>
+						<tr>
+							<th>姓名</th>
+							<th>内容</th>
+							<th>时间</th>
+							<th>状态</th>
+							<th>编辑</th>
+						</tr>
+					</thead>
+					<tbody>
+						<form action="delAll" method="post" class="messageInfo">
+							<tr class="message">
+								<td>张大爷</td>
+								<td>医生，头痛怎么办？</td>
+								<td>2016-12-13</td>
+								<td>未回复</td>
+								<td>
+									<a	href="#"  class="btn btn-primary btn-xs" data-type="1" onclick="userAsklist(event)" >回复</a>
+								</td>
+							</tr>
+						</form>
+					</tbody>
+				</table>
+				
+				<!--单页-->
+				<div class="pages">
+	           		{$page}
+	            </div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<!----健康咨询回复弹窗---->
+<div class="modal fade" id="advisoryReply" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+				<h4 class="modal-title">回复</h4>
+			</div>
+			<div class="panel-body">
+				<div class="timeline-messages" id="messageslist">
+					<div class="msg-time-chat">
+						<a class="message-img" href="/doctor/user/index.aspx?a=1&amp;u=6055"> 
+						<img src="" class="avatar"></a>
+						<div class="message-body msg-in"
+							><span class="arrow"></span>
+							<div class="text">
+								<p class="attribution"><a href="/doctor/user/index.aspx?a=1&amp;u=6055">张大爷</a>2017-01-10 11:50:50</p>
+								<p>这几天有点头疼？</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="chat-form">
+					<div class="input-cont ">
+						<input class="form-control col-lg-12" id="txtConsultMsg" name="txtConsultMsg" placeholder="在这里输入回复信息..." minlength="2" type="text" required="">
+					</div>
+					<div class="form-group">
+						<div class="pull-right chat-features">
+							<button type="button" class="btn btn-send" onclick="DoSaveConsultMsg();">发送</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+<!-- /.row --> </block>
+<block name="runJsContent"> $('#mainTable').DataTable({
+"paging": true, "lengthChange": true, "searching": true, "ordering":
+false, "info": true, "autoWidth": false }); </block>
+
+<block name="footer"> <include file="Public/footer" /> </block>
+<block name="foot"> <include file="Public/foot" /> </block>

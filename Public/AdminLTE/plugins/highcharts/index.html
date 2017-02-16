@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+		<script type="text/javascript" src="js/highcharts.js"></script>
+		<!--<script type="text/javascript" src="js/grid.js"></script>-->
+		<script src="js/highcharts-more.js"></script>
+		<script>
+			//左侧Javascript代码
+			var chart1; // 全局变量
+			$(document).ready(function() {
+				chart1 = new Highcharts.Chart({
+					chart: {
+						renderTo: 'container',
+						type: 'line'
+					},
+					title: {
+						text: 'Fruit Consumption'
+					},
+					xAxis: {
+						categories: ['Apples', 'Bananas', 'Oranges']
+					},
+					yAxis: {
+						title: {
+							text: 'Fruit eaten'
+						}
+					},
+					series: [{
+						name: 'ttte',
+						data: [1, 2, 4]
+					}, {
+						name: 'Jyyy',
+						data: [5, 7, 3]
+					}]
+				});
+			});
+		</script>
+	</head>
+
+	<body>
+		<div id="container" style="width:600px;height:400px"></div>
+	</body>
+
+</html>

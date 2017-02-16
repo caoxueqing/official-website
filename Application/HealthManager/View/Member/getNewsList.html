@@ -1,0 +1,238 @@
+<extend name="Public/base" />
+<block name="head"> <include file="Public/head" /> </block>
+<block name="title">新闻资讯</block>
+<block name="header"> <include file="Public/header" /> </block>
+<block name="left"> <include file="Public/leftSidebar" /> </block>
+<block name="right">
+<div class="row">
+<style>
+	.nav-tabs li{
+		width: 76px;
+	    height: 42px;
+	    float: left;
+	    text-align: center;
+	    line-height: 42px;
+	}
+</style>
+	<div class="col-xs-12">
+		<div class="box" style="padding:15px 15px;">
+			<div style="padding-left: 10px; padding-right: 10px;width: 100%;min-height: 1px;">
+				<ul class="nav nav-tabs nav-dark" id="myTab" style="background:#ddd">
+					<li class="active"><a href="#spokenHisMind">心里话</a></li>
+					<li><a href="#cardiovascular">心血管</a></li>
+					<li><a href="#male">男性</a></li>
+					<li><a href="#gynaecology">妇科</a></li>
+					<li><a href="#parenting">育儿</a></li>
+					<li><a href="#health">养生</a></li>
+					<li><a href="#bisexual">两性</a></li>
+				</ul>
+				<div class="tab-content mb30">
+				<!-- 心里话 -->
+					<div class="tab-pane active" id="spokenHisMind">
+						<div id="spokenHisMindDiv" class="panel-group">
+							<!-- 循环开始 -->
+							<volist name="spokenHisMindData" id="v">
+								<div class="panel panel-default" style="margin-top: 0px;border-radius:0px">
+									<div class="panel-heading" style="padding: 0px 0px;border-radius:0px">
+										<h4 class="panel-title">
+											<a class="collapsed" data-toggle="collapse" data-parent="#spokenHisMindDiv" href="#spokenHisMindDiv{$v.article_id}" onclick="ChangeState({$v.article_id});" style="display: block;line-height: 37px;ext-indent: 10px;height: 100px;overflow: hidden;" >
+												<img src="{$v.icon}" class="user-image" style="margin-left: 8px;width: 100px;margin-top: 10px;margin-left: 10px;float: left;">
+												<i style="margin-left: 8px;float: left;display: inline-block;width: 850px;height: 27px;font-size: 16px;font-style: normal;">{$v.title}</i>
+												<span style="display: inline-block;margin-left: 8px;float: left;height: 30px;width: 850px;overflow: hidden;font-size: 14px;color: #999999;">{$v.content}</span>
+												<span style="margin-left: 8px;color: #999999;">{$v.create_time}</span>
+											</a>
+										</h4>
+									</div>
+									<div class="panel-collapse collapse" id="spokenHisMindDiv{$v.article_id}" style="height: 0px;">
+										<div class="panel-body">
+											{$v.content}
+										</div>
+									</div>
+								</div>
+							</volist>
+							<!-- 循环结束 -->
+						</div>
+					</div>
+					<!-- 心血管 -->
+					<div class="tab-pane" id="cardiovascular">
+						<div id="cardiovascularDiv" class="panel-group">
+							<!-- 循环开始 -->
+							<volist name="cardiovascularData" id="v">
+								<div class="panel panel-default" style="margin-top: 0px;border-radius:0px">
+									<div class="panel-heading" style="padding: 0px 0px;border-radius:0px">
+										<h4 class="panel-title">
+											<a class="collapsed" data-toggle="collapse" data-parent="#cardiovascularDiv" href="#cardiovascularDiv{$v.article_id}" onclick="ChangeState({$v.article_id});" style="display: block;line-height: 37px;ext-indent: 10px;height: 100px;overflow: hidden;">
+												<img src="{$v.icon}" class="user-image" style="margin-left: 8px;width: 100px;margin-top: 10px;margin-left: 10px;float: left;">
+												<i style="margin-left: 8px;float: left;display: inline-block;width: 850px;height: 27px;font-size: 16px;font-style: normal;">{$v.title}</i>
+												<span style="display: inline-block;margin-left: 8px;float: left;height: 30px;width: 850px;overflow: hidden;font-size: 14px;color: #999999;">{$v.content}</span>
+												<span style="margin-left: 8px;color: #999999;">{$v.create_time}</span>
+											</a>
+										</h4>
+									</div>
+									<div class="panel-collapse collapse" id="cardiovascularDiv{$v.article_id}" style="height: 0px;">
+										<div class="panel-body">
+											{$v.content}
+										</div>
+									</div>
+								</div>
+							</volist>
+							<!-- 循环结束 -->
+						</div>
+					</div>
+					<!-- 男性 -->
+					<div class="tab-pane" id="male">
+						<div id="maleDiv" class="panel-group">
+							<!-- 循环开始 -->
+							<volist name="maleData" id="v">
+								<div class="panel panel-default" style="margin-top: 0px;border-radius:0px">
+									<div class="panel-heading" style="padding: 0px 0px;border-radius:0px">
+										<h4 class="panel-title">
+											<a class="collapsed" data-toggle="collapse" data-parent="#maleDiv" href="#maleDiv{$v.article_id}" onclick="ChangeState({$v.article_id});" style="display: block;line-height: 37px;ext-indent: 10px;height: 100px;overflow: hidden;">
+												<img src="{$v.icon}" class="user-image" style="margin-left: 8px;width: 100px;margin-top: 10px;margin-left: 10px;float: left;">
+												<i style="margin-left: 8px;float: left;display: inline-block;width: 850px;height: 27px;font-size: 16px;font-style: normal;">{$v.title}</i>
+												<span style="display: inline-block;margin-left: 8px;float: left;height: 30px;width: 850px;overflow: hidden;font-size: 14px;color: #999999;">{$v.content}</span>
+												<span style="margin-left: 8px;color: #999999;">{$v.create_time}</span>
+											</a>
+										</h4>
+									</div>
+									<div class="panel-collapse collapse" id="maleDiv{$v.article_id}" style="height: 0px;">
+										<div class="panel-body">
+											{$v.content}
+										</div>
+									</div>
+								</div>
+							</volist>
+							<!-- 循环结束 -->
+						</div>
+					</div>
+					<!-- 妇科 -->
+					<div class="tab-pane" id="gynaecology">
+						<div id="gynaecologyDiv" class="panel-group">
+							<!-- 循环开始 -->
+							<volist name="gynaecologyData" id="v">
+								<div class="panel panel-default" style="margin-top: 0px;border-radius:0px">
+									<div class="panel-heading" style="padding: 0px 0px;border-radius:0px">
+										<h4 class="panel-title">
+											<a class="collapsed" data-toggle="collapse" data-parent="#gynaecologyDiv" href="#gynaecologyDiv{$v.article_id}" onclick="ChangeState({$v.article_id});" style="display: block;line-height: 37px;ext-indent: 10px;height: 100px;overflow: hidden;">
+												<img src="{$v.icon}" class="user-image" style="margin-left: 8px;width: 100px;margin-top: 10px;margin-left: 10px;float: left;">
+												<i style="margin-left: 8px;float: left;display: inline-block;width: 850px;height: 27px;font-size: 16px;font-style: normal;">{$v.title}</i>
+												<span style="display: inline-block;margin-left: 8px;float: left;height: 30px;width: 850px;overflow: hidden;font-size: 14px;color: #999999;">{$v.content}</span>
+												<span style="margin-left: 8px;color: #999999;">{$v.create_time}</span>
+											</a>
+										</h4>
+									</div>
+									<div class="panel-collapse collapse" id="gynaecologyDiv{$v.article_id}" style="height: 0px;">
+										<div class="panel-body">
+											{$v.content}
+										</div>
+									</div>
+								</div>
+							</volist>
+							<!-- 循环结束 -->
+						</div>
+					</div>
+					<!-- 育儿 -->
+					<div class="tab-pane" id="parenting">
+						<div id="parentingDiv" class="panel-group">
+							<!-- 循环开始 -->
+							<volist name="parentingData" id="v">
+								<div class="panel panel-default" style="margin-top: 0px;border-radius:0px">
+									<div class="panel-heading" style="padding: 0px 0px;border-radius:0px">
+										<h4 class="panel-title">
+											<a class="collapsed" data-toggle="collapse" data-parent="#parentingDiv" href="#parentingDiv{$v.article_id}" onclick="ChangeState({$v.article_id});" style="display: block;line-height: 37px;ext-indent: 10px;height: 100px;overflow: hidden;">
+												<img src="{$v.icon}" class="user-image" style="margin-left: 8px;width: 100px;margin-top: 10px;margin-left: 10px;float: left;">
+												<i style="margin-left: 8px;float: left;display: inline-block;width: 850px;height: 27px;font-size: 16px;font-style: normal;">{$v.title}</i>
+												<span style="display: inline-block;margin-left: 8px;float: left;height: 30px;width: 850px;overflow: hidden;font-size: 14px;color: #999999;">{$v.content}</span>
+												<span style="margin-left: 8px;color: #999999;">{$v.create_time}</span>
+											</a>
+										</h4>
+									</div>
+									<div class="panel-collapse collapse" id="parentingDiv{$v.article_id}" style="height: 0px;">
+										<div class="panel-body">
+											{$v.content}
+										</div>
+									</div>
+								</div>
+							</volist>
+							<!-- 循环结束 -->
+						</div>
+					</div>
+					<!-- 养生 -->
+					<div class="tab-pane" id="health">
+						<div id="healthDiv" class="panel-group">
+							<!-- 循环开始 -->
+							<volist name="healthData" id="v">
+								<div class="panel panel-default" style="margin-top: 0px;border-radius:0px">
+									<div class="panel-heading" style="padding: 0px 0px;border-radius:0px">
+										<h4 class="panel-title">
+											<a class="collapsed" data-toggle="collapse" data-parent="#healthDiv" href="#healthDiv{$v.article_id}" onclick="ChangeState({$v.article_id});" style="display: block;line-height: 37px;ext-indent: 10px;height: 100px;overflow: hidden;">
+												<img src="{$v.icon}" class="user-image" style="margin-left: 8px;width: 100px;margin-top: 10px;margin-left: 10px;float: left;">
+												<i style="margin-left: 8px;float: left;display: inline-block;width: 850px;height: 27px;font-size: 16px;font-style: normal;">{$v.title}</i>
+												<span style="display: inline-block;margin-left: 8px;float: left;height: 30px;width: 850px;overflow: hidden;font-size: 14px;color: #999999;">{$v.content}</span>
+												<span style="margin-left: 8px;color: #999999;">{$v.create_time}</span>
+											</a>
+										</h4>
+									</div>
+									<div class="panel-collapse collapse" id="healthDiv{$v.article_id}" style="height: 0px;">
+										<div class="panel-body">
+											{$v.content}
+										</div>
+									</div>
+								</div>
+							</volist>
+							<!-- 循环结束 -->
+						</div>
+					</div>
+					<!-- 两性 -->
+					<div class="tab-pane" id="bisexual">
+						<div id="bisexualDiv" class="panel-group">
+							<!-- 循环开始 -->
+							<volist name="bisexualData" id="v">
+								<div class="panel panel-default" style="margin-top: 0px;border-radius:0px">
+									<div class="panel-heading" style="padding: 0px 0px;border-radius:0px">
+										<h4 class="panel-title">
+											<a class="collapsed" data-toggle="collapse" data-parent="#bisexualDiv" href="#bisexualDiv{$v.article_id}" onclick="ChangeState({$v.article_id});" style="display: block;line-height: 37px;ext-indent: 10px;height: 100px;overflow: hidden;">
+												<img src="{$v.icon}" class="user-image" style="margin-left: 8px;width: 100px;margin-top: 10px;margin-left: 10px;float: left;">
+												<i style="margin-left: 8px;float: left;display: inline-block;width: 850px;height: 27px;font-size: 16px;font-style: normal;">{$v.title}</i>
+												<span style="display: inline-block;margin-left: 8px;float: left;height: 30px;width: 850px;overflow: hidden;font-size: 14px;color: #999999;">{$v.content}</span>
+												<span style="margin-left: 8px;color: #999999;">{$v.create_time}</span>
+											</a>
+										</h4>
+									</div>
+									<div class="panel-collapse collapse" id="bisexualDiv{$v.article_id}" style="height: 0px;">
+										<div class="panel-body">
+											{$v.content}
+										</div>
+									</div>
+								</div>
+							</volist>
+							<!-- 循环结束 -->
+						</div>
+					</div>
+					<div class="pages">
+		           		{$page}
+		            </div>
+				</div>
+				<script>
+					$(function() {
+						$('#myTab a:last').tab('show');
+					})
+					$('#myTab a').click(function(e) {
+						e.preventDefault();
+						$(this).tab('show');
+					})
+				</script>
+				<!-- /.box-header -->
+			</div>
+		</div>
+		<!-- /.box -->
+	</div>
+	<!-- /.col -->
+</div>
+<!-- /.row --> </block>
+<block name="runJsContent"> $('#mainTable').DataTable({
+"paging": true, "lengthChange": true, "searching": true, "ordering":
+false, "info": true, "autoWidth": false }); </block>
+
+<block name="footer"> <include file="Public/footer" /> </block>
+<block name="foot"> <include file="Public/foot" /> </block>

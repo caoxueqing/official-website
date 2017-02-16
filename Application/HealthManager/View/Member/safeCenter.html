@@ -1,0 +1,256 @@
+<extend name="Public/base" />
+<block name="head"> <include file="Public/head" /> </block>
+<block name="title">添加APP</block>
+<block name="header"> <include file="Public/header" /> </block>
+<block name="left"> <include file="Public/leftSidebar" /> </block>
+<block name="right">
+
+<section class="content">
+	<div class="row">
+		<div class="col-xs-12">
+			<!-- /.box -->
+			<!-- general form elements disabled -->
+			<div class="box box-primary">
+				<!-- /.box-header -->
+				<div class="box-body">
+					<div>
+						<div class="form-group">
+							<label>密码 :</label>
+							<div class="input-group">
+								<input name="app_secret" type="password" value="这个是假的密码啊,真是的,还要看" class="form-control" placeholder="" disabled> 
+									<span class="input-group-btn">
+										<button type="button" class="btn btn-info btn-danger btn-flat" data-type="4" data-title="修改密码" onclick="showAlert(event);">修改</button>
+									</span>
+							</div>
+						</div>
+						<div class="form-group">
+							<label>邮箱 :</label>
+							<div class="input-group">
+								<input name="email" id="email" type="text" value="{$userData.email}" class="form-control" placeholder="请输入您的邮箱" disabled> 
+								<span class="input-group-btn"> 
+									<if condition="$userData.email_verify eq 0">
+										<button type="button" id="verifyEmailButton" class="btn btn-info btn-flat" data-type="3" data-title="邮箱" onclick="showAlert(event);">验证</button>
+									<else /> 
+									
+									</if>
+									
+									<if condition="$userData['email'] eq null">  
+										<button type="button" class="btn btn-info btn-danger btn-flat" data-type="1" onclick="showAlert(event);">绑定</button>
+									<else/> 
+										<button type="button" class="btn btn-info btn-danger btn-flat" data-type="1" onclick="showAlert(event);">更换绑定</button>
+									</if>
+								</span>
+							</div>
+						</div>
+						<div class="form-group">
+							<label>手机号 :</label>
+							<div class="input-group">
+								<input name="app_secret" type="text" value="{$userData.mobile}" class="form-control" placeholder="请输入您的手机号" disabled> 
+								<span class="input-group-btn">
+									<if condition="$userData['mobile'] eq null">  
+										<button type="button" class="btn btn-info btn-flat" data-type="5" data-title="手机号" onclick="showAlert(event);">绑定</button>
+									<else /> 
+										<button type="button" class="btn btn-info btn-danger btn-flat" data-type="2" data-title="手机号" onclick="showAlert(event);">更换绑定</button>
+									</if>
+								</span>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- /.box-body -->
+			</div>
+			<!-- /.box -->
+		</div>
+		<!-- /.col -->
+	</div>
+
+</section>
+
+<div class="modal fade" id="changePwdModal" tabindex="-1" role="dialog"
+	aria-labelledby="myModalLabel">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal"
+					aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+				<h4 class="modal-title" id="myModalLabel">修改密码</h4>
+			</div>
+			<div class="modal-body">
+				<!-- /.box-header -->
+				<!-- form start -->
+				<form id="change-pwd-form" class="form-horizontal" method="post">
+					<div class="form-group">
+						<label for="inputEmail3" class="col-sm-2 control-label">原始密码</label>
+						<div class="col-sm-10">
+							<input class="form-control" name="password" id="inputPassword1" placeholder="原始密码" type="password">
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="inputPassword2" class="col-sm-2 control-label">新密码</label>
+
+						<div class="col-sm-10">
+							<input class="form-control" name="newPassword" id="inputPassword2" placeholder="新密码" type="password">
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="inputPassword3" class="col-sm-2 control-label">重复密码</label>
+
+						<div class="col-sm-10">
+							<input class="form-control" name="passwordAgain" id="inputPassword3" placeholder="重复密码" type="password">
+						</div>
+					</div>
+					<input type="hidden" value="{$userData.uid}" name="uid" id="uid" />
+					<p class="login-box-msg" id="change-pwd-tip">密码不小于6位，并且是字母和数字的混合，其他类型不接受!请注意哦！</p>
+					<!-- /.box-footer -->
+				</form>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+				<button type="button" id="change-pwd-button" class="btn btn-danger" onclick="changePwd();">修改</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<div class="modal fade" id="changeEmailModal" tabindex="-1"
+	role="dialog" aria-labelledby="exampleModalLabel">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal"
+					aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+				<h4 class="modal-title" id="exampleModalLabel">更改绑定邮箱</h4>
+			</div>
+			<div class="modal-body">
+				<form>
+					<div class="form-group">
+						<label>邮箱 :</label> <input name="new_email" id="new_email" type="text" value="" class="form-control" placeholder="请输入您的邮箱">
+					</div>
+					<div class="form-group">
+						<label>验证码 :</label>
+						<div class="input-group">
+							<input name="new_email_code" id="new_email_code" type="text" value="" class="form-control" placeholder="邮箱收到的验证码"> 
+							<span class="input-group-btn">
+								<button type="button" class="btn btn-info btn-flat" data-type="email" data-title="邮箱" onclick="sendVerifyEmailToNewEmail(event);">发送验证码</button>
+							</span>
+						</div>
+					</div>
+				</form>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+				<button type="button" class="btn btn-primary btn-danger" onclick="verifyNewEmail(event);">验证</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="modal fade" id="bindMobileModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+				<h4 class="modal-title" id="exampleModalLabel">绑定手机号</h4>
+			</div>
+			<div class="modal-body">
+				<form>
+					<div class="form-group">
+						<label>手机号 :</label> <input name="targetMobile"  type="text" value="" id="targetMobile" class="form-control" placeholder="请输入要绑定的手机号">
+					</div>
+					<div class="form-group">
+						<label>验证码 :</label>
+						<div class="input-group">
+							<input name="verifyCode" id="verifyCode" type="text" value="" class="form-control" placeholder="您的手机收到的验证码"> 
+							<span class="input-group-btn">
+								<button type="button" class="btn btn-info btn-flat" onclick="sendVerifyCode(event);">发送验证码</button>
+							</span>
+						</div>
+					</div>
+				</form>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+				<button type="button" class="btn btn-primary btn-danger" onclick="bindMobileCode();">绑定</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="modal fade" id="changeMobileModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+				<h4 class="modal-title" id="exampleModalLabel">更改绑定手机号</h4>
+			</div>
+			<div class="modal-body">
+				<form>
+					<div class="form-group">
+						<label>手机号 :</label> <input name="targetMobile" id="targetMobile" type="text" value="" id="targetMobile" class="form-control" placeholder="请输入要更改的手机号">
+					</div>
+					<div class="form-group">
+						<label>验证码 :</label>
+						<div class="input-group">
+							<input name="verifyCode" id="verifyCode" type="text" value="" class="form-control" placeholder="您的手机收到的验证码"> 
+							<span class="input-group-btn">
+								<button type="button" class="btn btn-info btn-flat" onclick="sendVerifyCode(event);">发送验证码</button>
+							</span>
+						</div>
+					</div>
+				</form>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+				<button type="button" class="btn btn-primary btn-danger"
+					onclick="verifyCode(event);">验证</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="modal fade" id="verifyEmailModal" tabindex="-1"
+	role="dialog" aria-labelledby="exampleModalLabel">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal"
+					aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+				<h4 class="modal-title" id="exampleModalLabel">验证邮箱</h4>
+			</div>
+			<div class="modal-body">
+				<form>
+					<div class="form-group">
+						<label>验证码 :</label>
+						<div class="input-group">
+							<input name="verifyEmailCode" id="verifyEmailCode" type="text" value="" class="form-control" placeholder="请输入您的邮箱收到的验证码">
+							<span class="input-group-btn">
+								<button type="button" class="btn btn-info btn-flat" data-type="email" data-title="邮箱" onclick="resendVerifyEmail(event);">重新发送</button>
+							</span>
+						</div>
+					</div>
+				</form>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+				<button type="button" class="btn btn-primary btn-danger"
+					onclick="verifyEmail(event);">验证</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+</block>
+
+<block name="footer"> <include file="Public/footer" /> </block>
+<block name="foot"> <include file="Public/foot" /> </block>

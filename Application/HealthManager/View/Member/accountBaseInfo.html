@@ -1,0 +1,129 @@
+<extend name="Public/base" />
+<block name="head"> <include file="Public/head" /> </block>
+<block name="title">账户信息</block>
+<block name="header"> <include file="Public/header" /> </block>
+<block name="left"> <include file="Public/leftSidebar" /> </block>
+<block name="right">
+<script src="__PUBLIC__/AdminLTE/Js/jquery.validate.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		////<![CDATA[
+		//$(document).ready(function(){
+			$(".bianji").validate();
+		//});
+		//]]>
+		jQuery.validator.addMethod("isMobile", function(value, element) {
+			var length = value.length;
+			var mobile = /^(13[0-9]{9})|(18[0-9]{9})|(14[0-9]{9})|(17[0-9]{9})|(15[0-9]{9})$/;
+			return this.optional(element) || (length == 11 && mobile.test(value));
+		}, "请正确填写手机号码");
+	</script>
+	
+<section class="content">
+
+	<div class="row">
+		<div class="col-xs-12">
+			<!-- /.box -->
+			<!-- general form elements disabled -->
+			<div class="box box-primary">
+				<!-- /.box-header -->
+				<div class="box-body">
+					<form role="form"  method="post" id="change-user-form">
+						<!-- text input -->
+						<if condition="$userData['username'] eq null">
+							<div class="form-group">
+								<label>用户名</label> 
+								<input name="username" onkeyup="value=value.replace(/[^\w\.\/]/ig,'')"  style="ime-mode:disabled" type="text" value="{$userData.username}" id="username" class="form-control" placeholder="请输入您的用户名,用户名不能为中文">
+							</div>
+						<else/>
+						</if>
+						<div class="form-group">
+							<label>昵称</label> <input name="nickname" type="text"
+								value="{$userData.nickname}" class="form-control" placeholder="请输入您的昵称">
+						</div>
+						<div class="form-group">
+							<label>真实姓名</label> <input name="tiny_name" type="text"
+								value="{$userData.tinyName}" class="form-control" placeholder="请输入您的真实姓名">
+						</div>
+						<div class="form-group">
+							<span>性别：</span> 
+							<input type="radio" name="sex" id="" value="2" <if condition="$userData.sex == 1"> checked="checked" </if>  />
+							<span class="man">男</span>
+							<input type="radio" name="sex" id="" checked="checked" value="1" <if condition="$userData.sex == 2"> checked="checked" </if>/>
+							<span class="man">女</span>
+						</div>
+						<div class="form-group">
+							<label>手机号</label> <input name="mobile" type="text"
+								value="{$userData.mobile}" class="form-control" placeholder="请输入您的手机号">
+						</div>
+						<div class="form-group">
+							<label>身份证号</label> <input name="idno" type="text"
+								value="{$userData.idno}" class="form-control" placeholder="请输入您的身份证号">
+						</div>
+						<!-- <div class="form-group">
+							<label>身高</label> <input name="stature" type="text"
+								value="{$userData.stature}" class="form-control" placeholder="请输入您的身高">
+						</div>
+						<div class="form-group">
+							<label>体重</label> <input name="weight" type="text"
+								value="{$userData.weight}" class="form-control" placeholder="请输入您的体重">
+						</div> -->
+						<div class="form-group">
+							<label>出生日期</label> <input name="birthday" type="text"
+								value="{$userData.birthday}" class="form-control" placeholder="请输入您的出生日期例如:1900-00-00">
+						</div>
+						<div class="form-group">
+							<label>邮箱</label> <input name="email" type="text"
+								value="{$userData.email}" class="form-control" placeholder="请输入您的邮箱">
+						</div>
+						<div class="form-group">
+							<label>QQ</label> <input name="qq" type="text"
+								value="{$userData.qq}" class="form-control" placeholder="请输入您的QQ">
+						</div>
+						<div class="form-group">
+							<label>地址</label> <input name="address" type="text"
+								value="{$userData.address}" class="form-control" placeholder="请输入您的地址">
+						</div>
+						<input type="hidden" value="{$_SESSION['Sess_']['userInfo']['uid']}" name="uid" id="uid" />
+						<input type="hidden" value="1" name="user_type" id="userType" />
+						<button type="button" onclick="updateUserInfo();" style="float: right" id="updateUserInfo" class="btn btn-danger">修改</button>
+						<script type="text/javascript">
+							//更新用户资料
+							$('#updateUserInfo').click(function(){
+								$.ajax({
+									cache: false,
+									type: "POST",
+									url: 'ajax_updateUserInfo',
+									data: $('#change-user-form').serialize(), // 你的formid 
+									async: false,
+									error: function(request) {},
+									success: function(data) {
+										if (data.status) {
+											alert("更新用户信息成功");
+											window.location.href = 'accountBaseInfo';
+										} else {
+											alert('更新用户信息失败');
+										}
+	
+									}
+								});
+							});
+                    	</script>
+						<!-- <input class="btn btn-danger" style="float: right" id="updateUserInfo" type="submit" value="提交"> -->
+					</form>
+				</div>
+				<!-- /.box-body -->
+			</div>
+			<!-- /.box -->
+		</div>
+		<!-- /.col -->
+	</div>
+
+</section>
+
+
+</block>
+
+<block name="footer"> <include file="Public/footer" /> </block>
+<block name="foot"> <include file="Public/foot" /> </block>
+
+
