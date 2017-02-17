@@ -1,0 +1,10 @@
+.downBtn button{
+	margin-top: 15px;
+	margin-left: 25px;
+}
+.downBtn button i{
+	margin-right: 10px;
+}
+.breadcrumbs-v3.img-v3 {
+    background: url(../images/map.jpg) no-repeat;
+}

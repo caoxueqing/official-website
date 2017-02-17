@@ -1,0 +1,19 @@
+.clearfix{
+	margin-left: 10px;
+}
+.clearfix a{
+	color: #555555;
+}
+.solutionp h2{
+	color: #ED6C00;
+}
+.solutionp p{
+	color: #656565;
+	font-size: 14px;
+}
+i.icon-bg-u {
+    background: #8C8C8C;
+}
+.breadcrumbs-v3.img-v3 {
+    background: url(../images/map.jpg) no-repeat;
+}

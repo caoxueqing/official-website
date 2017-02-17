@@ -1,0 +1,127 @@
+
+.header{
+	position: fixed;
+	top: 0;
+	z-index:10001;
+}
+@media (max-width: 768px) {
+	.header{
+		width: 100%;
+	}
+}
+.breadcrumbs-v3{
+	margin-top: 80px;
+}
+.activeMy{
+	background-color:#ED6C00;
+}
+.activeMy>a{
+	color: #FFFFFF;
+	font-size: 18px;
+}
+.breadcrumb li.active, .breadcrumb li a:hover {
+    color: #ED6C00;
+}
+.list-toggleS:after {
+    top: 10px;
+    right: 10px;
+    color: #FFFFFF;
+    font-size: 14px;
+    content: "\f105";
+    position: absolute;
+    font-weight: normal;
+    display: inline-block;
+    font-family: FontAwesome;
+}
+.sidebar-nav-v1 > li.active, .sidebar-nav-v1 > li.active:hover {
+    background: #ED6C00;
+}
+.sidebar-nav-v1 ul li  a, .sidebar-nav-v1 ul li.active a {
+    font-size: 16px;
+}
+.sidebar-nav-v1 ul li:hover a, .sidebar-nav-v1 ul li.active a {
+    color: #ED6C00;
+}
+span.label-u, span.badge-u, .list-group-item.active>.badge.badge-u {
+    background: #ED6C00;
+}
+.heading p{
+	text-indent: 33px;
+	text-align:justify;
+	font-size: 16px;
+}
+.inner-results{
+	height: 100px;
+	border-bottom: 1px dashed #CCCCCC;
+	margin:23px 0 0 10px;
+}
+.boxImg{
+	width: 90px;
+	height: 70px;
+	float: left;
+	margin-right: 15px;
+}
+.boxImg>img{
+	width: 90px;
+	height: 70px;
+}
+.overflow-h a{
+	font-size: 16px;
+	color: #ED6C00;
+}
+.overflow-a p{
+	margin-top: 3px;
+	font-size: 14px;
+	width: 97%;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+.listUl li{
+	color: #b3b2b2;
+}
+#topcontrol:hover{
+	background: #ED6C00;
+}
+
+
+
+
+ul,li{
+	list-style: none;
+}
+.list-toggle{
+	background: #CCCCCC;	
+}
+.list-toggle a{
+	font-size: 18px;
+	color: #FFFFFF;
+}
+.list-toggle a:hover{
+	color:#FFFFFF;
+}
+.list-toggle:hover{
+	background: #ED6C00;
+}
+.list-toggle:last-child{
+	margin-top: 40px;
+}
+.list-toggle:after {
+    top: 7px;
+    right: 10px;
+    color: #FFFFFF;
+    font-size: 14px;
+    content: "\f105";
+    position: absolute;
+    font-weight: normal;
+    display: inline-block;
+    font-family: FontAwesome;
+}
+.disPlay{
+	border: 1px solid #f1f0f0;
+}
+.disPlay p{
+	text-align: center;
+	color: #9B9B9B;
+	font-size: 14px;
+}
